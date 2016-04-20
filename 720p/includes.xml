@@ -324,14 +324,40 @@
             </control>
         </control>
     </include>	
+	<include name="ButtonMedia">
+        <height>30</height>
+        <width>250</width>
+        <aligny>bottom</aligny>
+        <textwidth>200</textwidth>
+        <font>font10</font>
+		<textcolor>5FFFFFFF</textcolor>
+		<!-- Kijelölés -->
+
+        <focusedcolor>white</focusedcolor>
+        <pulseonselect>false</pulseonselect>
+    </include>
     <include name="ButtonCommonValues">
         <height>30</height>
         <width>250</width>
         <textoffsetx>10</textoffsetx>
         <textwidth>215</textwidth>
         <aligny>center</aligny>
-        <font>cirrus_18</font>
-        <texturefocus border="0" flipx="true">listwhitegradient.png</texturefocus>
+        <font>font12</font>
+        <textcolor>5FFFFFFF</textcolor>
+        <texturefocus border="0" flipx="true">-</texturefocus>
+        <texturenofocus>-</texturenofocus>
+        <focusedcolor>white</focusedcolor>
+        <pulseonselect>false</pulseonselect>
+    </include>
+	    <include name="ButtonViews">
+        <height>30</height>
+        <width>250</width>
+        <!-- <textoffsetx>10</textoffsetx> -->
+        <textwidth>215</textwidth>
+        <aligny>center</aligny>
+        <font>font12</font>
+        <textcolor>5FFFFFFF</textcolor>
+        <texturefocus border="100" flipx="true">-</texturefocus>
         <texturenofocus>-</texturenofocus>
         <focusedcolor>white</focusedcolor>
         <pulseonselect>false</pulseonselect>
@@ -422,12 +448,12 @@
             <top>0</top>
             <width>500</width>
             <height>50</height>
-            <font>cirrus_24</font>
-            <textcolor>white</textcolor>
+            <font>font12</font>
+            <textcolor>48FFFFFF</textcolor>
             <scroll>false</scroll>
             <align>right</align>
             <aligny>center</aligny>
-            <label>[COLOR=white]$INFO[Container.NumItems][/COLOR] $LOCALIZE[31025] - $LOCALIZE[31024] [COLOR=white]$INFO[Container.CurrentPage]/$INFO[Container.NumPages][/COLOR]</label>
+            <label>[COLOR=48FFFFFF]$INFO[Container.NumItems][/COLOR] $LOCALIZE[31025] - $LOCALIZE[31024] [COLOR=48FFFFFF]$INFO[Container.CurrentPage]/$INFO[Container.NumPages][/COLOR]</label>
             <include>Window_OpenClose_Animation</include>   
             <visible>!Skin.HasSetting(nopagecount)</visible>	  
         </control>
@@ -980,8 +1006,8 @@
                 <height>28</height>
                 <align>left</align>
                 <aligny>center</aligny>
-                <font>cirrus_24</font>
-                <textcolor>white</textcolor>
+                <font>font13</font>
+                <textcolor>2FFFFFFF</textcolor>
                 <label>$INFO[System.Time]</label>
             </control>
         </control>
@@ -1091,6 +1117,8 @@
         <textcolor>grey2</textcolor>
         <shadowcolor>black</shadowcolor>
     </include>    
+	
+	
     <include name="Window_OpenClose_Left_Animation">
         <animation effect="slide" start="1280,0" end="0,0" time="500" tween="quadratic" easing="out">WindowOpen</animation>
         <animation effect="slide" start="0,0" end="1280,0" time="500" tween="quadratic" easing="in">WindowClose</animation>
@@ -1698,4 +1726,5 @@
             <include>AudioCodecFlaggingConditions</include>
         </control>
     </include>
+	
 </includes>

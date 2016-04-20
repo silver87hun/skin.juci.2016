@@ -1341,11 +1341,7 @@
 		</font>
 
 		<!-- Required for system -->
-		<font>
-			<name>font13</name>
-			<filename>Arial.ttf</filename>
-			<size>20</size>
-		</font>
+
 		
 			<font>
 			<name>abc</name>

@@ -3,76 +3,126 @@
     <defaultcontrol always="true">10</defaultcontrol>
     <coordinates>
         <system>1</system>
-        <left>340</left>
-        <top>235</top>
+        <left>0</left>
+        <top>0</top>
+		 <animation type="WindowOpen" reversible="false">
+            <effect type="fade" start="0" end="100" time="300" tween="sine" easing="in" />
+            <effect type="zoom" start="50" end="100" time="300" center="auto" tween="quadratic" easing="out" />
+        </animation>
     </coordinates>
     <include>dialogeffect</include>
     <controls>
-        <control type="image">
+ 		<control type="multiimage">        
+			<visible>Window.IsVisible(10000)</visible>
             <left>0</left>
             <top>0</top>
-            <width>600</width>
-            <height>230</height>
-            <texture border="20">OverlayDialogBackground.png</texture>
+            <width>1280</width>
+            <height>720</height>
+            <imagepath background="true">layer</imagepath>
+            <timeperimage>80000</timeperimage>
+            <randomize>true</randomize>
+            <fadetime>100</fadetime>
         </control>
+		
+				<control type="multiimage">
+			<visible>Window.IsVisible(10000)</visible>
+            <left>0</left>
+            <top>0</top>
+            <width>1280</width>
+            <height>720</height>
+            <imagepath background="true">fade</imagepath>
+            <timeperimage>80000</timeperimage>
+            <randomize>true</randomize>
+            <fadetime>100</fadetime>
+        </control>
+         <control type="image">
+            <left>0</left>
+            <top>0</top>
+            <width>1280</width>
+            <height>720</height>
+            <texture>mask/mask_black20.png</texture>
+        </control>
+		<control type="group">
+				<animation effect="fade" start="100" end="0" time="400" tween="sine" easing="inout" condition="Window.IsVisible(DialogSelect.xml)">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="400" tween="sine" easing="inout" condition="Window.IsVisible(DialogOK.xml)">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="400" tween="sine" easing="inout" condition="Window.IsVisible(DialogYesNo.xml)">Conditional</animation>
+			<!-- <animation effect="slide" start="0,0" end="0,-200" time="400" tween="cubic" easing="inout" pulse="true">WindowOpen</animation> -->
+		    <left>200</left>
+            <top>250</top>
         <control type="label" id="1">
             <description>heading label</description>
             <left>0</left>
             <top>0</top>
             <width>0</width>
             <height>0</height>
-            <font>-</font>
+            <font>font16</font>
+			<textcolor>78FFFFFF</textcolor>
             <visible>false</visible>
         </control>
         <control type="label">
             <description>header label</description>
             <left>20</left>
             <top>18</top>
-            <width>560</width>
+            <width>860</width>
             <height>30</height>
-            <font>cirrus_30</font>
+            <font>font30</font>
             <label>$INFO[Control.GetLabel(1)] $INFO[System.Progressbar,- ,%]</label>
-            <align>left</align>
+            <align>center</align>
             <aligny>center</aligny>
-            <textcolor>accent</textcolor>
-            <shadowcolor>black</shadowcolor>
+            <textcolor>5FFFFFFF</textcolor>
+            <!-- <shadowcolor>black</shadowcolor> -->
         </control>
 		<control type="textbox" id="9">
 			<description>text</description>
 			<left>20</left>
 			<top>60</top>
-			<width>560</width>
+			<width>860</width>
 			<height>90</height>
-			<align>left</align>
+			<align>center</align>
 			<label>-</label>
-			<font>cirrus_20</font>
+			<font>font13</font>
+			<textcolor>A8FFFFFF</textcolor>
 			<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 		</control>
-        <control type="progress">
+		
+				            <control type="image">
+                <description>Busy animation</description>
+                <left>430</left>
+                <top>140</top>
+                    <width>34</width>
+                    <height>34</height>
+                    <texture colordiffuse="$VAR[ColourHighlight]" fallback="special://skin/extras/spinners/fillingcircles.gif">$INFO[Skin.String(busyloader)]</texture>
+                    <aspectratio>keep</aspectratio>
+					<colordiffuse>5FFFFFFF</colordiffuse>
+            </control>
+		
+<!--         <control type="progress">
             <description>Progressbar</description>
-            <left>20</left>
-            <top>142</top>
-            <width>560</width>
-            <height>16</height>
+            <left>200</left>
+            <top>250</top>
+            <width>500</width>
+            <height>5</height>
             <info>System.Progressbar</info>
-        </control>
-        <control type="button" id="10">
+			<colordiffuse>black</colordiffuse>
+        </control> -->
+<!--         <control type="button" id="10">
             <description>Cancel button</description>
             <left>200</left>
-            <top>170</top>
+            <top>370</top>
             <width>200</width>
             <height>40</height>
             <label>222</label>
-            <font>font12_title</font>
-            <textcolor>white</textcolor>
-            <focusedcolor>white</focusedcolor>
+            <font>font13</font>
+            <textcolor>grey2</textcolor>
+            <focusedcolor>black</focusedcolor>
             <align>center</align>
-            <texturenofocus border="5">menuitemNF.png</texturenofocus>
-            <texturefocus border="5">button-focus.png</texturefocus>
+             <texturenofocus border="5">-</texturenofocus>
+            <texturefocus border="5">-</texturefocus>
             <onleft>10</onleft>
             <onright>10</onright>
             <onup>10</onup>
             <ondown>10</ondown>
-        </control>
+        </control> -->
+		</control>
     </controls>
 </window>

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
     <include name="CommonRootView">
+	
+	
         <!-- BACKGROUND PANEL FOR LIST VIEW (not sure why this is here, but it works) -->
         <control type="group">
             <animation type="WindowOpen" reversible="false">
@@ -11,27 +13,142 @@
                 <effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
                 <effect type="fade" start="100" end="0" time="300" />
             </animation>
+			
+			
+			
+			
+			        <control type="multiimage">
+            <visible>!Skin.HasSetting(Menu_RandomCustom1)</visible>
+            <left>0</left>
+            <top>0</top>
+            <width>1280</width>
+            <height>720</height>
+            <imagepath background="true">layer</imagepath>
+            <timeperimage>80000</timeperimage>
+            <randomize>true</randomize>
+            <fadetime>1000</fadetime>
+            <animation effect="zoom" start="110" end="135" center="auto" time="15000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(animation_bg)">Conditional</animation>
+            <animation effect="slide" end="-20,-20" delay="4000" time="8000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(animation_bg)">Conditional</animation>
+            <animation effect="slide" end="40,0" delay="10000" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(animation_bg)">Conditional</animation>
+			<visible>!Skin.HasSetting(Color Background)</visible>
+        </control>
+		        <control type="multiimage">
+            <visible>!Skin.HasSetting(Menu_RandomCustom1)</visible>
+            <left>0</left>
+            <top>0</top>
+            <width>1280</width>
+            <height>720</height>
+            <imagepath background="true">fade</imagepath>
+            <timeperimage>80000</timeperimage>
+            <randomize>true</randomize>
+            <fadetime>1000</fadetime>
+            <animation effect="zoom" start="110" end="135" center="auto" time="15000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(animation_bg)">Conditional</animation>
+            <animation effect="slide" end="-20,-20" delay="4000" time="8000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(animation_bg)">Conditional</animation>
+            <animation effect="slide" end="40,0" delay="10000" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(animation_bg)">Conditional</animation>
+			<visible>!Skin.HasSetting(Color Background)</visible>
+        </control>
+		
+		<control type="image">
+            <visible>!Skin.HasSetting(Menu_RandomCustom1)</visible>
+            <left>0</left>
+            <top>0</top>
+            <width>1280</width>
+            <height>720</height>
+            <texture>mask/mask_black70.png</texture>
+            <animation effect="zoom" start="110" end="135" center="auto" time="15000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(animation_bg)">Conditional</animation>
+            <animation effect="slide" end="-20,-20" delay="4000" time="8000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(animation_bg)">Conditional</animation>
+            <animation effect="slide" end="40,0" delay="10000" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(animation_bg)">Conditional</animation>
+			<visible>!Skin.HasSetting(Dark Layer)</visible>
+        </control>
+		
+		<control type="image">
+            <visible>!Skin.HasSetting(Menu_RandomCustom1)</visible>
+            <left>0</left>
+            <top>0</top>
+            <width>1280</width>
+            <height>720</height>
+            <texture>mask/mask_black90.png</texture>
+            <animation effect="zoom" start="110" end="135" center="auto" time="15000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(animation_bg)">Conditional</animation>
+            <animation effect="slide" end="-20,-20" delay="4000" time="8000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(animation_bg)">Conditional</animation>
+            <animation effect="slide" end="40,0" delay="10000" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(animation_bg)">Conditional</animation>
+			<visible>!Skin.HasSetting(Grey Layer)</visible>
+        </control>
+		
+				<control type="image">
+            <visible>!Skin.HasSetting(Menu_RandomCustom1)</visible>
+            <left>0</left>
+            <top>0</top>
+            <width>1280</width>
+            <height>720</height>
+            <texture>mask/white_layer40.png</texture>
+            <animation effect="zoom" start="110" end="135" center="auto" time="15000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(animation_bg)">Conditional</animation>
+            <animation effect="slide" end="-20,-20" delay="4000" time="8000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(animation_bg)">Conditional</animation>
+            <animation effect="slide" end="40,0" delay="10000" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(animation_bg)">Conditional</animation>
+			<visible>!Skin.HasSetting(Grey Layer)</visible>
+        </control>
+			
             <include>Window_OpenClose_Animation</include>
             <control type="group">
+			<!-- Háttérhez igazítás -->
+				 <animation effect="fade" start="100" end="0" time="400" tween="sine" easing="inout" condition="Window.IsVisible(DialogProgress.xml)">Conditional</animation>
+				 <animation effect="fade" start="100" end="0" time="400" tween="sine" easing="inout" condition="Window.IsVisible(DialogSelect.xml)">Conditional</animation>
+			<animation effect="fade" start="100" end="0" time="400" tween="sine" easing="inout" condition="Window.IsVisible(DialogYesNo.xml)">Conditional</animation>
+			<animation effect="fade" start="100" end="0" time="400" tween="sine" easing="inout" condition="Window.IsVisible(DialogOK.xml)">Conditional</animation>
                 <include>VisibleFadeEffect</include>
                 <visible>Control.IsVisible(55)</visible>
                 <control type="image">
-                    <left>0</left>
-                    <top>120</top>
-                    <width>1280</width>
-                    <height>480</height>
-                    <texture>rightlistbackground.png</texture>
+				<animation effect="fade" start="100" end="0" time="400" tween="sine" easing="inout" condition="Window.IsVisible(DialogContextMenu.xml)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="140,0" time="400" tween="quadratic" easing="out" condition="ControlGroup(9000).HasFocus | ControlGroup(9001).HasFocus | Control.HasFocus(8999)">Conditional</animation>
+                    <left>800</left>
+                    <top>0</top>
+                    <width>700</width>
+                    <height>1080</height>
+                    <texture>mask/mask_black20.png</texture>
                 </control>
-                <control type="image">
+                 <control type="image">
+				             <animation effect="slide" start="0,0" end="480,0" time="400" tween="quadratic" easing="out" condition="ControlGroup(9000).HasFocus | ControlGroup(9001).HasFocus | Control.HasFocus(8999)">Conditional</animation>
+            <animation effect="slide" start="0,0" end="-380,0" time="400" tween="quadratic" easing="out" condition="ControlGroup(9000).HasFocus | ControlGroup(9001).HasFocus">WindowClose</animation>
                     <left>0</left>
-                    <top>120</top>
-                    <width>1280</width>
-                    <height>480</height>
-                    <texture>rightlistbackground.png</texture>
+                    <top>340</top>
+                    <width>30</width>
+                    <height>30</height>
+					<colordiffuse>5FFFFFFF</colordiffuse>
+                    <texture>icons/line_single.png</texture>
                 </control>
+				
+ 				<control type="image">
+				             <animation effect="slide" start="0,0" end="0,-250" easing="out" tween="quadratic" time="300" condition="Window.IsVisible(DialogContextMenu.xml)">Conditional</animation>
+            <!-- <animation effect="slide" start="0,0" end="-380,0" time="400" tween="quadratic" easing="out" condition="ControlGroup(9021).HasFocus">WindowClose</animation> -->
+                    <left>620</left>
+                    <top>690</top>
+                    <width>30</width>
+                    <height>30</height>
+					<colordiffuse>5FFFFFFF</colordiffuse>
+                    <texture>icons/line_single2.png</texture>
+                </control>
+				
+				<control type="image">
+				<animation effect="slide" start="0,0" end="0,-240" time="400" tween="quadratic" easing="out" condition="ControlGroup(9021).HasFocus">Conditional</animation>
+                    <left>1030</left>
+                    <top>690</top>
+                    <width>30</width>
+                    <height>30</height>
+					<colordiffuse>5FFFFFFF</colordiffuse>
+                    <texture>icons/line_single2.png</texture>
+                </control>
+				
             </control>
         </control>
+		
+		
+		
+
         <control type="group">
+		<visible>!Skin.HasSetting(List)</visible>
+				 <animation effect="fade" start="100" end="0" time="400" tween="sine" easing="inout" condition="Window.IsVisible(DialogProgress.xml)">Conditional</animation>
+				 <animation effect="fade" start="100" end="0" time="400" tween="sine" easing="inout" condition="Window.IsVisible(DialogSelect.xml)">Conditional</animation>
+		<animation effect="fade" start="100" end="0" time="400" tween="sine" easing="inout" condition="Window.IsVisible(DialogYesNo.xml">Conditional</animation>
+		<animation effect="fade" start="100" end="0" time="400" tween="sine" easing="inout" condition="Window.IsVisible(DialogOK.xml)">Conditional</animation>
             <animation type="WindowOpen" reversible="false">
                 <effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" />
                 <effect type="fade" start="0" end="100" time="300" />
@@ -43,19 +160,25 @@
             <visible>Control.IsVisible(55)</visible>
             <include>VisibleFadeEffect</include>
             <control type="list" id="55">
+				<animation effect="slide" start="0,0" end="330,0" time="400" tween="quadratic" easing="out" condition="ControlGroup(9000).HasFocus | ControlGroup(9001).HasFocus | Control.HasFocus(8999)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="-180,0" time="400" tween="quadratic" easing="out" condition="ControlGroup(9000).HasFocus | ControlGroup(9001).HasFocus">WindowClose</animation>
+				<animation effect="zoom" start="100" end="65" time="400" center="auto" tween="quadratic" easing="out" condition="ControlGroup(9000).HasFocus | ControlGroup(9001).HasFocus | Control.HasFocus(8999) | Window.IsVisible(DialogContextMenu.xml)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="-180,0" time="400" tween="quadratic" easing="out" condition="ControlGroup(9000).HasFocus | ControlGroup(9001).HasFocus">WindowClose</animation>
+				<animation effect="slide" start="0,0" end="0,-200" time="400" tween="quadratic" easing="out" condition="Window.IsVisible(DialogContextMenu.xml">Conditional</animation>
+				
                 <left>60</left>
-                <top>138</top>
+                <top>50</top>
                 <width>700</width>
-                <height>450</height>
+                <height>650</height>
                 <onleft>2</onleft>
-                <onright>60</onright>
+                <onright>9021</onright>
                 <onup>55</onup>
                 <ondown>55</ondown>
                 <viewtype label="535">list</viewtype>
                 <pagecontrol>60</pagecontrol>
                 <scrolltime>200</scrolltime>
                 <itemlayout height="40">
-                    <control type="image">
+                    <!-- <control type="image">
                         <left>0</left>
                         <top>0</top>
                         <width>700</width>
@@ -63,32 +186,116 @@
                         <aligny>bottom</aligny>
                         <texture border="2,2,2,2" diffuse="rowdiffuse.png">rowblank2.png</texture>
                         <aspectratio>stretch</aspectratio>
-                    </control>
+                    </control> -->
                     <control type="label">
                         <left>0</left>
                         <top>0</top>
                         <width>560</width>
                         <height>40</height>
-                        <font>cirrus_24</font>
-                        <textcolor>grey2</textcolor>
+                        <font>font13</font>
+                        <textcolor>5FFFFFFF</textcolor>
                         <selectedcolor>selected</selectedcolor>
-                        <align>right</align>
+                        <align>left</align>
                         <aligny>center</aligny>
                         <label>$INFO[ListItem.Label]</label>
                     </control>
+					<control type="label">
+                        <left>0</left>
+                        <top>0</top>
+                        <width>560</width>
+                        <height>40</height>
+                        <font>font13</font>
+                        <textcolor>5FFFFFFF</textcolor>
+                        <selectedcolor>selected</selectedcolor>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.Label]</label>
+						<visible>!Skin.HasSetting(font-)</visible>
+                    </control>
+					<control type="label">
+                        <left>0</left>
+                        <top>0</top>
+                        <width>560</width>
+                        <height>40</height>
+                        <font>font13</font>
+                        <textcolor>5FFFFFFF</textcolor>
+                        <selectedcolor>selected</selectedcolor>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.Label]</label>
+						<visible>!Skin.HasSetting(font--)</visible>
+                    </control>
+			
+<!--  					<control type="label">
+                        <left>0</left>
+                        <top>0</top>
+                        <width>560</width>
+                        <height>40</height>
+                        <font>font13</font>
+                        <textcolor>white</textcolor>
+                        <selectedcolor>selected</selectedcolor>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.Label]</label>
+						<visible>!Skin.HasSetting(Font Lighter)</visible>
+                    </control> -->
+					
+<!-- 					<control type="label">
+                        <left>0</left>
+                        <top>0</top>
+                        <width>560</width>
+                        <height>40</height>
+                        <font>FontSize_18</font>
+                        <textcolor>5FFFFFFF</textcolor>
+                        <selectedcolor>selected</selectedcolor>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.Label]</label>
+						<visible>!Skin.HasSetting(Font Type 2)</visible>
+                    </control> -->
+					
                     <control type="label">
                         <left>580</left>
                         <top>0</top>
-                        <width>90</width>
+                        <width>190</width>
                         <height>40</height>
-                        <font>cirrus_16</font>
-                        <textcolor>grey2</textcolor>
+                        <font>font13</font>
+                        <textcolor>5FFFFFFF</textcolor>
                         <selectedcolor>selected</selectedcolor>
-                        <align>right</align>
+                        <align>left</align>
                         <aligny>center</aligny>
                         <label>$INFO[ListItem.Label2]</label>
                         <animation effect="slide" start="0,0" end="20,0" delay="0" time="0" condition="[Window.IsVisible(VideoLibrary) | Window.IsVisible(VideoFiles)]">conditional</animation>
                     </control>
+					<control type="label">
+                        <left>580</left>
+                        <top>0</top>
+                        <width>190</width>
+                        <height>40</height>
+                        <font>font13</font>
+                        <textcolor>5FFFFFFF</textcolor>
+                        <selectedcolor>selected</selectedcolor>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.Label2]</label>
+                        <animation effect="slide" start="0,0" end="20,0" delay="0" time="0" condition="[Window.IsVisible(VideoLibrary) | Window.IsVisible(VideoFiles)]">conditional</animation>
+						<visible>!Skin.HasSetting(font-)</visible>
+                    </control>
+                    <control type="label">
+                        <left>580</left>
+                        <top>0</top>
+                        <width>190</width>
+                        <height>40</height>
+                        <font>font13</font>
+                        <textcolor>5FFFFFFF</textcolor>
+                        <selectedcolor>selected</selectedcolor>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.Label2]</label>
+                        <animation effect="slide" start="0,0" end="20,0" delay="0" time="0" condition="[Window.IsVisible(VideoLibrary) | Window.IsVisible(VideoFiles)]">conditional</animation>
+						<visible>!Skin.HasSetting(font--)</visible>
+                    </control>
+					
                     <control type="image">
                         <left>590</left>
                         <top>14</top>
@@ -99,7 +306,7 @@
                     </control>
                 </itemlayout>
                 <focusedlayout height="40">
-                    <control type="image">
+<!--                     <control type="image">
                         <left>0</left>
                         <top>0</top>
                         <width>700</width>
@@ -107,41 +314,97 @@
                         <aligny>bottom</aligny>
                         <texture border="2,2,2,2" diffuse="rowdiffuse.png">rowblank2.png</texture>
                         <aspectratio>stretch</aspectratio>
-                    </control>
-                    <control type="image">
+                    </control> -->
+                     <!-- <control type="image">
                         <left>0</left>
                         <top>0</top>
-                        <width>700</width>
+                        <width>650</width>
                         <height>40</height>
                         <aligny>bottom</aligny>
-                        <texture>listwhitegradient.png</texture>
+                        <texture border="1">mask/white_layer40.png</texture>
+						<bordertexture>mask/Shadow.png</bordertexture>
+						<bordersize>2</bordersize>
                         <aspectratio>stretch</aspectratio>
+                    </control> -->
+                    <control type="label">
+                        <left>0</left>
+                        <top>0</top>
+                        <width>560</width>
+                        <height>40</height>
+                        <font>font16</font>
+                        <textcolor>5FFFFFFF</textcolor>
+                        <selectedcolor>selected</selectedcolor>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.Label]</label>
                     </control>
                     <control type="label">
                         <left>0</left>
                         <top>0</top>
                         <width>560</width>
                         <height>40</height>
-                        <font>cirrus_24</font>
-                        <textcolor>white</textcolor>
+                        <font>font16</font>
+                        <textcolor>5FFFFFFF</textcolor>
                         <selectedcolor>selected</selectedcolor>
-                        <align>right</align>
+                        <align>left</align>
                         <aligny>center</aligny>
                         <label>$INFO[ListItem.Label]</label>
+						<visible>!Skin.HasSetting(selected-)</visible>
                     </control>
+                    <control type="label">
+                        <left>0</left>
+                        <top>0</top>
+                        <width>560</width>
+                        <height>40</height>
+                        <font>font16</font>
+                        <textcolor>5FFFFFFF</textcolor>
+                        <selectedcolor>selected</selectedcolor>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.Label]</label>
+						<visible>!Skin.HasSetting(selected--)</visible>						
+                    </control>					
                     <control type="label">
                         <left>580</left>
                         <top>0</top>
-                        <width>90</width>
+                        <width>190</width>
                         <height>40</height>
-                        <font>cirrus_16</font>
-                        <textcolor>grey2</textcolor>
+                        <font>font13</font>
+                        <textcolor>5FFFFFFF</textcolor>
                         <selectedcolor>selected</selectedcolor>
-                        <align>right</align>
+                        <align>left</align>
                         <aligny>center</aligny>
                         <label>$INFO[ListItem.Label2]</label>
                         <animation effect="slide" start="0,0" end="20,0" delay="0" time="0" condition="[Window.IsVisible(VideoLibrary) | Window.IsVisible(VideoFiles)]">conditional</animation>
                     </control>
+                    <control type="label">
+                        <left>580</left>
+                        <top>0</top>
+                        <width>190</width>
+                        <height>40</height>
+                        <font>font13</font>
+                        <textcolor>5FFFFFFF</textcolor>
+                        <selectedcolor>selected</selectedcolor>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.Label2]</label>
+                        <animation effect="slide" start="0,0" end="20,0" delay="0" time="0" condition="[Window.IsVisible(VideoLibrary) | Window.IsVisible(VideoFiles)]">conditional</animation>
+						<visible>!Skin.HasSetting(selected-)</visible>
+                    </control>
+                    <control type="label">
+                        <left>580</left>
+                        <top>0</top>
+                        <width>190</width>
+                        <height>40</height>
+                        <font>font13</font>
+                        <textcolor>2FFFFFFF</textcolor>
+                        <selectedcolor>selected</selectedcolor>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.Label2]</label>
+                        <animation effect="slide" start="0,0" end="20,0" delay="0" time="0" condition="[Window.IsVisible(VideoLibrary) | Window.IsVisible(VideoFiles)]">conditional</animation>
+						<visible>!Skin.HasSetting(selected--)</visible>
+                    </control>					
                     <control type="image">
                         <left>590</left>
                         <top>14</top>
@@ -153,37 +416,98 @@
                 </focusedlayout>
             </control>
             <control type="scrollbar" id="60">
-                <left>770</left>
-                <top>125</top>
-                <width>25</width>
-                <height>460</height>
+			<animation effect="fade" start="100" end="0" time="200" center="auto" tween="quadratic" easing="out" condition="ControlGroup(9000).HasFocus | ControlGroup(9001).HasFocus | Control.HasFocus(8999)">Conditional</animation>
+			
+                <left>780</left>
+                <top>95</top>
+                <width>5</width>
+                <height>600</height>
                 <texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
                 <texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
                 <texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
                 <textureslidernib>ScrollBarNib.png</textureslidernib>
                 <textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
                 <onleft>55</onleft>
-                <onright>ActivateWindow(1121)</onright>
+                <onright>ActivateWindow(9021)</onright>
                 <showonepage>false</showonepage>
                 <orientation>vertical</orientation>
                 <visible>Control.IsVisible(55)</visible>
             </control>
             <control type="group">
-                <left>850</left>
-                <top>100</top>
+ 			<animation effect="zoom" start="100" end="65" time="400" center="auto" tween="quadratic" easing="out" condition="ControlGroup(9000).HasFocus | ControlGroup(9001).HasFocus | Control.HasFocus(8999) | ControlGroup(9021).HasFocus | Window.IsVisible(DialogContextMenu.xml)">Conditional</animation>
+			<animation effect="slide" start="0,0" end="0,-100" time="400" tween="quadratic" easing="out" condition="ControlGroup(9021).HasFocus">Conditional</animation>
+			<animation effect="slide" start="0,0" end="0,-200" time="400" tween="quadratic" easing="out" condition="Window.IsVisible(DialogContextMenu.xml">Conditional</animation>
+			<animation effect="slide" start="0,0" end="100,0" time="400" tween="quadratic" easing="out" condition="ControlGroup(9000).HasFocus | ControlGroup(9001).HasFocus | Control.HasFocus(8999)">Conditional</animation>
+			<!-- <animation effect="fade" start="100" end="0" time="200" center="auto" tween="quadratic" easing="out" condition="Window.IsVisible(DialogContextMenu.xml)">Conditional</animation> -->
+				<left>850</left>
+                <top>50</top>
                 <visible>Control.IsVisible(55)</visible>
                 <control type="image">
-                    <left>0</left>
-                    <top>40</top>
-                    <width>360</width>
-                    <height>440</height>
+                    <left>-40</left>
+                    <top>10</top>
+                    <width>460</width>
+                    <height>540</height>
                     <aspectratio aligny="center">keep</aspectratio>
                     <fadetime>IconCrossfadeTime</fadetime>
                     <texture background="true">$INFO[ListItem.Icon]</texture>
-                    <bordertexture border="8">ContentPanelvertical.png</bordertexture>
-                    <bordersize>8</bordersize>
+                    <bordertexture border="12">mask/Shadow.png</bordertexture>
+                    <bordersize>20</bordersize>
                     <visible>!Container.Content(Genres)</visible>
+					<visible>!Skin.HasSetting(cover)</visible>
                 </control>
+				<control type="image">
+                    <left>-40</left>
+                    <top>150</top>
+                    <width>460</width>
+                    <height>540</height>
+                    <aspectratio aligny="center">keep</aspectratio>
+                    <fadetime>IconCrossfadeTime</fadetime>
+                    <texture background="true">$INFO[ListItem.Art(fanart)]</texture>
+                    <bordertexture border="12">mask/Shadow.png</bordertexture>
+                    <bordersize>20</bordersize>
+                    <visible>!Container.Content(Genres)</visible>
+					<visible>!Skin.HasSetting(fanart)</visible>
+                </control>
+				<control type="image">
+                    <left>-40</left>
+                    <top>150</top>
+                    <width>460</width>
+                    <height>540</height>
+                    <aspectratio aligny="center">keep</aspectratio>
+                    <fadetime>IconCrossfadeTime</fadetime>
+                    <texture background="true">$INFO[ListItem.Art(landscape)]</texture>
+                    <bordertexture border="12">mask/Shadow.png</bordertexture>
+                    <bordersize>20</bordersize>
+                    <visible>!Container.Content(Genres)</visible>
+					<visible>!Skin.HasSetting(landscape)</visible>
+                </control>
+				<control type="image">
+                    <left>-40</left>
+                    <top>-150</top>
+                    <width>460</width>
+                    <height>540</height>
+                    <aspectratio aligny="center">keep</aspectratio>
+                    <fadetime>IconCrossfadeTime</fadetime>
+                    <texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
+                    <!-- <bordertexture border="12">mask/Shadow.png</bordertexture> -->
+                    <bordersize>20</bordersize>
+                    <visible>!Container.Content(Genres)</visible>
+					<visible>!Skin.HasSetting(logo)</visible>
+                </control>
+				<control type="image">
+                    <left>-40</left>
+                    <top>-150</top>
+                    <width>460</width>
+                    <height>540</height>
+                    <aspectratio aligny="center">keep</aspectratio>
+                    <fadetime>IconCrossfadeTime</fadetime>
+                    <texture background="true">$INFO[ListItem.Art(clearart)]</texture>
+                    <!-- <bordertexture border="12">mask/Shadow.png</bordertexture> -->
+                    <bordersize>20</bordersize>
+                    <visible>!Container.Content(Genres)</visible>
+					<visible>!Skin.HasSetting(clearart)</visible>
+                </control>
+				
                 <control type="image">
                     <left>0</left>
                     <top>40</top>
@@ -206,5 +530,72 @@
                 </control>
             </control>
         </control>
+				 <control type="group" id="9021">
+				 <animation effect="fade" start="100" end="0" time="200" center="auto" tween="quadratic" easing="out" condition="ControlGroup(9000).HasFocus | ControlGroup(9001).HasFocus | Control.HasFocus(8999)">Conditional</animation>
+				 <animation effect="fade" start="100" end="0" time="400" tween="sine" easing="inout" condition="Window.IsVisible(DialogProgress.xml)">Conditional</animation>
+				 <animation effect="fade" start="100" end="0" time="400" tween="sine" easing="inout" condition="Window.IsVisible(DialogSelect.xml)">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="400" tween="sine" easing="inout" condition="Window.IsVisible(DialogYesNo.xml)">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="400" tween="sine" easing="inout" condition="Window.IsVisible(DialogOK.xml)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,-200" time="400" tween="quadratic" easing="out" condition="ControlGroup(9021).HasFocus">Conditional</animation>
+                <left>730</left>
+                <top>470</top>
+                <control type="button" id="9">
+                    <description>Trailer Fullscreen</description>
+                    <left>200</left>
+                    <top>250</top>
+ 					<width>70</width>
+					<height>40</height>
+                    <include>ButtonMedia</include>
+                    <onclick>Dialog.Close(1121)</onclick>
+                    <onclick>Dialog.Close(2003)</onclick>
+					<texturefocus>icons/trailerfo.png</texturefocus>
+					<texturenofocus>icons/trailerno.png</texturenofocus>
+					 <textoffsety>50</textoffsety>
+					<textoffsetx>-25</textoffsetx>
+                    <onclick>PlayMedia($INFO[ListItem.Trailer])</onclick>
+                    <label>41205</label>
+                    <enable>!IsEmpty(ListItem.Trailer)</enable>
+                    <onleft>55</onleft>
+                    <onright>5</onright>
+                    <onup>55</onup>
+                    <ondown>55</ondown>
+                </control>
+                <control type="button" id="5">
+                    <description>Movie Fullscreen</description>
+                    <left>350</left>
+                    <top>250</top>
+					<width>70</width>
+					<height>40</height>
+					<texturefocus>icons/playfo.png</texturefocus>
+					<texturenofocus>icons/playno.png</texturenofocus>
+					 <textoffsety>50</textoffsety>
+					<textoffsetx>-25</textoffsetx>
+                    <onclick>Dialog.Close(1121)</onclick>
+                    <onclick>Dialog.Close(2003)</onclick>
+                    <onclick>PlayMedia($INFO[ListItem.FileNameAndPath])</onclick>
+                    <label>41207</label>
+                    <enable>Container.Content(movies) | Container.Content(episodes) | Container.Content(videofiles)</enable>
+                    <include>ButtonMedia</include>
+                    <onleft>9</onleft>
+                    <onright>9</onright>
+                    <onup>55</onup>
+                    <ondown>55</ondown>
+                </control>
+              <!--   <control type="button" id="8">
+                    <description>Cinema</description>
+                    <left>0</left>
+                    <top>160</top>
+                    <onclick>Playlist.Clear</onclick>
+                    <onclick>Dialog.Close(1121)</onclick>
+                    <onclick>XBMC.RunScript(script.cinema.experience)</onclick>
+                    <visible>Container.Content(Movies) + System.HasAddon(script.cinema.experience) + !SubString(Container.FolderPath,plugin://plugin,Left)</visible>
+                    <label>41208</label>
+                    <include>ButtonCommonValues</include>
+                    <onleft>9021</onleft>
+                    <onright>9021</onright>
+                    <onup>5</onup>
+                    <ondown>10</ondown>
+                </control> -->
+				 </control>
     </include>
 </includes>

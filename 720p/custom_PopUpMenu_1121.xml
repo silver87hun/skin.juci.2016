@@ -6,9 +6,9 @@
 
     <controls>
         <control type="group">
-
-            <animation effect="slide" start="0,0" end="280,0" time="400" tween="quadratic" easing="out" condition="ControlGroup(9021).HasFocus">WindowOpen</animation>
-            <animation effect="slide" start="0,0" end="-380,0" time="400" tween="quadratic" easing="out" condition="ControlGroup(1121).HasFocus">WindowClose</animation>
+			<left>1560</left>
+             <animation effect="slide" start="0,0" end="-280,0" time="400" tween="quadratic" easing="out" condition="ControlGroup(9021).HasFocus">WindowOpen</animation>
+            <animation effect="slide" start="0,0" end="380,0" time="400" tween="quadratic" easing="out" condition="ControlGroup(1121).HasFocus">WindowClose</animation>
 
             <control type="button" id="8999">
                 <description>Fake button for mouse control</description>
@@ -24,7 +24,7 @@
             </control>
 
             <!-- Menu background panel -->
-            <control type="image">
+<!--             <control type="image">
                 <left>-820</left>
                 <top>0</top>
                 <width>820</width>
@@ -39,16 +39,16 @@
                 <height>720</height>
                 <texture border="5">dialogbackground.png</texture>
                 <aspectratio>stretch</aspectratio>
-            </control>
-            <control type="image">
+            </control> -->
+<!--             <control type="image">
                 <left>-250</left>
                 <top>650</top>
                 <width>160</width>
                 <height>40</height>
                 <aspectratio>keep</aspectratio>
                 <texture>cirrusLogo.png</texture>
-            </control>
-            <control type="image">
+            </control> -->
+            <!-- <control type="image">
                 <left>-267</left>
                 <top>400</top>
                 <width>250</width>
@@ -84,7 +84,7 @@
                 <height>1</height>
                 <texture flipy="true">separator.png</texture>
                 <visible>Container.Content(Movies) | Container.Content(Episodes)</visible>
-            </control>
+            </control> -->
             <control type="group">   
                 <left>-240</left>
                 <top>20</top>
@@ -106,82 +106,51 @@
 
             <!-- MENU ITEMS BELOW -->
             <control type="group" id="9021">
-                <left>-260</left>
-                <top>70</top>
-                <control type="button" id="2">
-                    <left>0</left>
-                    <top>0</top>
-                    <include>ButtonCommonValues</include>
-                    <description>Trailer Windowed</description>
-                    <onclick>Dialog.Close(1121)</onclick>
-                    <onclick>PlayMedia($INFO[ListItem.Trailer],1)</onclick>
-                    <label>41204</label>
-                    <enable>!IsEmpty(ListItem.Trailer)</enable>
-                    <onleft>9021</onleft>
-                    <onright>9021</onright>
-                    <onup>10</onup>
-                    <ondown>3</ondown>
-                </control>
-                <control type="button" id="3">
+                <left>-550</left>
+                <top>370</top>
+ <control type="button" id="9">
                     <description>Trailer Fullscreen</description>
-                    <left>0</left>
-                    <top>40</top>
-                    <include>ButtonCommonValues</include>
+                    <left>200</left>
+                    <top>250</top>
+ 					<width>70</width>
+					<height>40</height>
+                    <!-- <include>ButtonMedia</include> -->
                     <onclick>Dialog.Close(1121)</onclick>
                     <onclick>Dialog.Close(2003)</onclick>
+					<texturefocus>icons/trailerfo.png</texturefocus>
+					<texturenofocus>icons/trailerno.png</texturenofocus>
+					 <textoffsety>50</textoffsety>
+					<textoffsetx>-25</textoffsetx>
                     <onclick>PlayMedia($INFO[ListItem.Trailer])</onclick>
                     <label>41205</label>
                     <enable>!IsEmpty(ListItem.Trailer)</enable>
-                    <onleft>9021</onleft>
-                    <onright>9021</onright>
-                    <onup>2</onup>
-                    <ondown>4</ondown>
-                </control>
-                <control type="button" id="4">
-                    <description>Movie Windowed</description>
-                    <left>0</left>
-                    <top>80</top>
-                    <onclick>Dialog.Close(1121)</onclick>
-                    <onclick>PlayMedia($INFO[ListItem.FileNameAndPath],1)</onclick>
-                    <label>41206</label>
-                    <enable>Container.Content(movies) | Container.Content(episodes) | Container.Content(videofiles)</enable>
-                    <include>ButtonCommonValues</include>
-                    <onleft>9021</onleft>
-                    <onright>9021</onright>
-                    <onup>3</onup>
-                    <ondown>5</ondown>
+                    <onleft>5</onleft>
+                    <onright>5</onright>
+                    <onup>Dialog.Close(1121)</onup>
+                    <ondown>Dialog.Close(1121)</ondown>
                 </control>
                 <control type="button" id="5">
                     <description>Movie Fullscreen</description>
-                    <left>0</left>
-                    <top>120</top>
+                    <left>350</left>
+                    <top>250</top>
+					<width>70</width>
+					<height>40</height>
+					<texturefocus>icons/playfo.png</texturefocus>
+					<texturenofocus>icons/playno.png</texturenofocus>
+					 <textoffsety>50</textoffsety>
+					<textoffsetx>-25</textoffsetx>
                     <onclick>Dialog.Close(1121)</onclick>
                     <onclick>Dialog.Close(2003)</onclick>
                     <onclick>PlayMedia($INFO[ListItem.FileNameAndPath])</onclick>
                     <label>41207</label>
                     <enable>Container.Content(movies) | Container.Content(episodes) | Container.Content(videofiles)</enable>
-                    <include>ButtonCommonValues</include>
-                    <onleft>9021</onleft>
-                    <onright>9021</onright>
-                    <onup>4</onup>
-                    <ondown>8</ondown>
+                    <include>ButtonMedia</include>
+                    <onleft>9</onleft>
+                    <onright>9</onright>
+                    <onup>Dialog.Close(1121)</onup>
+                    <ondown>Dialog.Close(1121)</ondown>
                 </control>
-                <control type="button" id="8">
-                    <description>Cinema</description>
-                    <left>0</left>
-                    <top>160</top>
-                    <onclick>Playlist.Clear</onclick>
-                    <onclick>Dialog.Close(1121)</onclick>
-                    <onclick>XBMC.RunScript(script.cinema.experience)</onclick>
-                    <visible>Container.Content(Movies) + System.HasAddon(script.cinema.experience) + !SubString(Container.FolderPath,plugin://plugin,Left)</visible>
-                    <label>41208</label>
-                    <include>ButtonCommonValues</include>
-                    <onleft>9021</onleft>
-                    <onright>9021</onright>
-                    <onup>5</onup>
-                    <ondown>10</ondown>
-                </control>
-                <control type="button" id="10">
+<!--                 <control type="button" id="10">
                     <description>Exit</description>
                     <left>0</left>
                     <top>280</top>
@@ -192,7 +161,7 @@
                     <onright>9021</onright>
                     <onup>8</onup>
                     <ondown>2</ondown>
-                </control>
+                </control> -->
             </control>
         </control>
 

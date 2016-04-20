@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="28000">
+    <animation effect="fade" time="100">WindowOpen</animation>
+    <animation effect="fade" time="200">WindowClose</animation>
+	<visible>DialogSelect.xml</visible>
+    <coordinates>
+        <system>1</system>
+        <left>0</left>
+        <top>0</top>
+    </coordinates>
+    <controls>
+       <control type="multiimage">
+			<!-- <animation effect="slide" start="0,0" end="0,-200" time="400" tween="cubic" easing="inout" pulse="true">WindowOpen</animation> -->
+            <visible>!Skin.HasSetting(Menu_RandomCustom1)</visible>
+            <left>0</left>
+            <top>0</top>
+            <width>1280</width>
+            <height>720</height>
+            <imagepath background="true">layer</imagepath>
+            <timeperimage>80000</timeperimage>
+            <randomize>true</randomize>
+            <fadetime>100</fadetime>
+        </control>
+		
+				<control type="multiimage">
+            <visible>!Skin.HasSetting(Menu_RandomCustom1)</visible>
+            <left>0</left>
+            <top>0</top>
+            <width>1280</width>
+            <height>720</height>
+            <imagepath background="true">fade</imagepath>
+            <timeperimage>80000</timeperimage>
+            <randomize>true</randomize>
+            <fadetime>100</fadetime>
+        </control>
+    </controls>
+</window>

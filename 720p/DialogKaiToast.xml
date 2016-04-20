@@ -89,12 +89,14 @@
 			
  			<control type="image" id="400">
                 <description>avatar</description>
-                <left>10</left>
-                <top>10</top>
-                <width>80</width>
-                <height>80</height>
+                <left>0</left>
+                <top>0</top>
+                <width>100</width>
+                <height>100</height>
                 <aspectratio>keep</aspectratio>
                 <texture>Chat_circular_outlined_interface_button_128 (1).png</texture>
+							<bordertexture border="12">mask/Shadow.png</bordertexture>
+            <bordersize>14</bordersize>
             </control>
 			
   			<control type="image">

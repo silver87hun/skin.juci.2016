@@ -5,23 +5,34 @@
     <coordinates>
         <system>1</system>
         <left>0</left>
-        <top>0</top>
+        <top>220</top>
     </coordinates>
     <controls>
+	<control type="group">
+	            <animation type="WindowOpen" reversible="false">
+                <effect type="slide" start="0,100" end="0" center="640,360" easing="out" tween="quadratic" time="300" />
+                <effect type="fade" start="0" end="100" time="300" />
+            </animation>
+            <animation type="WindowClose" reversible="false">
+                <effect type="slide" start="0" end="0,100" center="640,360" easing="in" tween="quadratic" time="300" />
+                <effect type="fade" start="100" end="0" time="300" />
+            </animation>
+	
         <control type="image" id="999">
             <description>background image</description>
             <left>0</left>
             <top>0</top>
-            <width>298</width>
-            <height>720</height>
-            <texture>background-contextmenu.png</texture>
+            <width>1280</width>
+            <height>250</height>
+            <texture>mask/mask_black70.png</texture>
         </control>
+
         <control type="grouplist" id="996">
             <description>grouplist for context buttons</description>
-            <left>20</left>
-            <top>30</top>
+            <left>500</left>
+            <top>20</top>
             <width>300</width>
-            <height max="670">auto</height>
+            <height>200</height>
             <itemgap>2</itemgap>
         </control>
         <control type="button" id="1000">
@@ -29,12 +40,13 @@
             <left>15</left>
             <top>-</top>
             <width>270</width>
-            <height>40</height>
-            <font>cirrus_20</font>
+            <height>35</height>
+            <font>font13</font>
             <align>center</align>
-            <textcolor>grey2</textcolor>
-            <focusedcolor>white</focusedcolor>
+            <textcolor>5FFFFFFF</textcolor>
+            <focusedcolor>E8FFFFFF</focusedcolor>
             <include>ButtonCommonValues</include>
         </control>
+	</control>
     </controls>
 </window>

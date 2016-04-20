@@ -4,26 +4,9 @@
     <!-- ================================= FANART VIEW ID 508 ================================ -->
     <!-- ====================== Movies, TV Shows, Seasons, Episodes only ===================== -->
     <include name="Fanart">
-        <control type="image">
-            <!-- darken the background a bit -->
-            <left>0</left>
-            <top>0</top>
-            <width>1280</width>
-            <height>720</height>
-            <aspectratio>stretch</aspectratio>
-            <texture>black-back3.png</texture>
-            <visible>Skin.HasSetting(VideoLibraryDimFanart) + !Control.IsVisible(55)</visible>
-        </control>
-        <control type="image">
-            <!-- bottom bar background -->
-            <left>0</left>
-            <top>232r</top>
-            <width>1280</width>
-            <height>700</height>
-            <aspectratio>stretch</aspectratio>
-            <texture>rightlistbackground.png</texture>
-            <visible>Control.IsVisible(508)</visible>
-        </control>
+	
+	
+
         <control type="group">
             <visible>Control.IsVisible(508)</visible>
             <animation type="WindowOpen" reversible="false">
@@ -34,6 +17,12 @@
                 <effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300"/>
                 <effect type="fade" start="100" end="0" time="300"/>
             </animation> 
+			
+			<animation effect="fade" start="100" end="0" time="400" tween="sine" easing="inout" condition="Window.IsVisible(DialogProgress.xml)">Conditional</animation>
+			<animation effect="fade" start="100" end="0" time="400" tween="sine" easing="inout" condition="Window.IsVisible(DialogSelect.xml)">Conditional</animation>
+			<animation effect="fade" start="100" end="0" time="400" tween="sine" easing="inout" condition="Window.IsVisible(DialogYesNo.xml)">Conditional</animation>
+			<animation effect="fade" start="100" end="0" time="400" tween="sine" easing="inout" condition="Window.IsVisible(DialogOK.xml)">Conditional</animation>
+			
             <!-- <include>VisibleFadeEffect</include> -->
             <left>0</left>
             <top>510</top>
@@ -56,27 +45,6 @@
                 <preloaditems>2</preloaditems>
                 <!-- <movement>3</movement> -->
                 <!-- ITEM LAYOUT FOR MOVIES,TVSHOWS,SEASONS -->
-                <itemlayout condition="Container.Content(Movies) | Container.Content(Seasons) | Container.Content(TVShows)" height="200" width="120">
-                    <control type="image">
-                        <left>2</left>
-                        <top>20</top>
-                        <width>120</width>
-                        <height>175</height>
-                        <aspectratio>stretch</aspectratio>
-                        <texture background="true">$INFO[ListItem.Icon]</texture>
-                        <bordertexture border="6">ContentPanelvertical.png</bordertexture>
-                        <bordersize>6</bordersize>
-                    </control>
-                    <control type="image">
-                        <left>75</left>
-                        <top>145</top>
-                        <width>35</width>
-                        <height>35</height>
-                        <aspectratio>keep</aspectratio>
-                        <texture>$VAR[overlayIcon]</texture>
-                        <visible>Player.HasVideo | Skin.HasSetting(originalwatched)</visible>
-                    </control>
-                </itemlayout>
                 <focusedlayout condition="Container.Content(Movies) | Container.Content(Seasons) | Container.Content(TVShows)" height="310" width="120">
                     <control type="group">
                         <animation type="Focus" reversible="false">
@@ -84,15 +52,15 @@
                         </animation>
                         <left>0</left>
                         <top>0</top>
-                        <control type="image">
+                         <control type="image">
                             <left>2</left>
                             <top>20</top>
                             <width>120</width>
                             <height>175</height>
                             <aspectratio>stretch</aspectratio>
-                            <texture>black-back.png</texture>
-                            <bordertexture>ContentPanelvertical.png</bordertexture>
-                            <bordersize>6</bordersize>
+                            <texture>mask/Shadow.png</texture>
+                            <bordertexture></bordertexture>
+                            <bordersize>1</bordersize>
                         </control>
                         <control type="image">
                             <left>2</left>
@@ -178,6 +146,7 @@
                     </control>
                 </focusedlayout>
             </control>
+			
             <control type="scrollbar" id="60">
                 <left>-10</left>
                 <top>-20</top>
@@ -203,15 +172,21 @@
                 <effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300"/>
                 <effect type="fade" start="100" end="0" time="300"/>
             </animation> 
+			
+			<animation effect="fade" start="100" end="0" time="400" tween="sine" easing="inout" condition="Window.IsVisible(DialogProgress.xml)">Conditional</animation>
+			<animation effect="fade" start="100" end="0" time="400" tween="sine" easing="inout" condition="Window.IsVisible(DialogSelect.xml)">Conditional</animation>
+			<animation effect="fade" start="100" end="0" time="400" tween="sine" easing="inout" condition="Window.IsVisible(DialogYesNo.xml)">Conditional</animation>
+			<animation effect="fade" start="100" end="0" time="400" tween="sine" easing="inout" condition="Window.IsVisible(DialogOK.xml)">Conditional</animation>
+			
             <left>0</left>
             <top>100</top>
             <visible>Control.IsVisible(508) + !Window.IsVisible(VideoFiles) + Container.Content(Movies) + !Container.Content(TVShows) + !Container.Content(Seasons) + !Container.Content(Episodes)</visible>
             <control type="image">
                 <left>-100</left>
-                <top>-10</top>
+                <top>350</top>
                 <width>1480</width>
                 <height>400</height>
-                <texture>videoinfoback.png</texture>
+                <texture>mask/mask_black20.png</texture>
                 <aspectratio>stretch</aspectratio>
             </control>
             <control type="group">
@@ -220,38 +195,38 @@
                 <visible>Control.IsVisible(508) + Container.Content(Movies)</visible>
                 <control type="fadelabel">
                     <left>-60</left>
-                    <top>-20</top>
-                    <width>1280</width>
+                    <top>-60</top>
+                    <width>450</width>
                     <height>30</height>
-                    <font>cirrus_30</font>
-                    <textcolor>white</textcolor>
+                    <font>font16</font>
+                    <textcolor>AFFFFFFF</textcolor>
                     <scroll>true</scroll>
                     <align>left</align>
                     <aligny>center</aligny>
                     <label>$INFO[ListItem.Title]</label>
                     <scrollout>false</scrollout>
                     <pauseatend>2000</pauseatend>
-                    <visible>!Skin.HasSetting(Smallwindowhidden)</visible>
+                    <!-- <visible>!Skin.HasSetting(Smallwindowhidden)</visible> -->
                 </control>
                 <control type="label">
                     <left>-60</left>
-                    <top>50</top>
-                    <width>600</width>
+                    <top>-30</top>
+                    <width>450</width>
                     <height>30</height>
-                    <font>cirrus_24</font>
-                    <textcolor>white</textcolor>
+                    <font>font10</font>
+                    <textcolor>5FFFFFFF</textcolor>
                     <scroll>false</scroll>
                     <align>left</align>
                     <aligny>center</aligny>
-                    <label>$INFO[ListItem.Genre,[COLOR=accent]$LOCALIZE[515]:[/COLOR] ]</label>
+                    <label>$INFO[ListItem.Genre]</label>
                     <scrollout>false</scrollout>
                     <pauseatend>2000</pauseatend>
-                    <visible>!Skin.HasSetting(Smallwindowhidden)</visible>
+                    <!-- <visible>!Skin.HasSetting(Smallwindowhidden)</visible> -->
                 </control>
-                <control type="label">
+<!--                 <control type="label">
                     <left>-60</left>
                     <top>50</top>
-                    <width>800</width>
+                    <width>450</width>
                     <height>30</height>
                     <font>cirrus_24</font>
                     <textcolor>white</textcolor>
@@ -262,22 +237,53 @@
                     <scrollout>false</scrollout>
                     <pauseatend>2000</pauseatend>
                     <visible>Skin.HasSetting(Smallwindowhidden)</visible>
-                </control>
+                </control> -->
                 <control type="fadelabel">
                     <left>-60</left>
-                    <top>90</top>
-                    <width>470</width>
+                    <top>20</top>
+                    <width>450</width>
                     <height>30</height>
-                    <font>cirrus_24</font>
-                    <textcolor>white</textcolor>
+                    <font>font13</font>
+                    <textcolor>98FFFFFF</textcolor>
                     <scroll>true</scroll>
                     <align>left</align>
                     <aligny>center</aligny>
-                    <label>[COLOR=accent]$INFO[ListItem.Year][/COLOR] $INFO[ListItem.Duration] $LOCALIZE[12391]</label>
+                    <label>[COLOR=98FFFFFF]$INFO[ListItem.Year][/COLOR]        $INFO[ListItem.Duration] $LOCALIZE[12391]</label>
                     <scrollout>false</scrollout>
                     <pauseatend>2000</pauseatend>
                     <visible>!ListItem.IsFolder</visible>
                 </control>
+			<!-- Film IMDB -->
+			<control type="group">
+			<left>-145</left>
+			<top>-5</top>
+			<control type="label">
+                <description>Rating value</description>
+                <left>155</left>
+                <top>60</top>
+                <width>110</width>
+                <height>25</height>
+                <textcolor>98FFFFFF</textcolor>
+                <font>font13</font>
+                <align>left</align>
+                <label>$INFO[Listitem.Rating]</label>
+                <colordiffuse>black</colordiffuse>
+                <visible>!IsEmpty(ListItem.Thumb)</visible> 
+            </control>
+			
+			<control type="image">
+                <width>350</width>
+                <height>60</height>
+                <left>-60</left>
+                <top>45</top>
+				<colordiffuse>5FFFFFFF</colordiffuse>
+                <aspectratio align="center">keep</aspectratio>
+                <texture>icons/Cinema-Imdb-icon-w.png</texture>
+                <visible>!ListItem.IsFolder + !IsEmpty(Listitem.Rating)</visible>
+            </control>
+			</control>
+
+				
                 <control type="group">
                     <left>80</left>
                     <top>86</top>
@@ -302,11 +308,11 @@
                     <description>Movie Plot</description>
                     <left>-60</left>
                     <top>130</top>
-                    <width>600</width>
-                    <height>122</height>
-                    <font>cirrus_22</font>
+                    <width>400</width>
+                    <height>90</height>
+                    <font>font10</font>
                     <align>justify</align>
-                    <textcolor>white</textcolor>
+                    <textcolor>48FFFFFF</textcolor>
                     <label>$INFO[ListItem.Plot]</label>
                     <autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
                     <visible>!Skin.HasSetting(plotoutline)</visible>
@@ -327,7 +333,7 @@
             </control>
             <control type="group">
                 <left>-60</left>
-                <control type="image">
+<!--                 <control type="image">
                     <left>700</left>
                     <top>40</top>
                     <width>540</width>
@@ -339,16 +345,15 @@
                     <visible>!Skin.HasSetting(Smallwindowhidden)</visible>
                     <visible>!Player.HasVideo | !Skin.HasSetting(videowindownoborder) | !Skin.HasSetting(videowindowglobal)</visible>
                     <visible>!IsEmpty(ListItem.Thumb)</visible> 
-                </control>
+                </control> -->
                 <control type="image">
-                    <left>700</left>
-                    <top>40</top>
-                    <width>540</width>
-                    <height>303</height>
+                    <left>540</left>
+                    <top>-100</top>
+                    <width>800</width>
+                    <height>450</height>
                     <aspectratio>stretch</aspectratio>
                     <fadetime>FanartCrossfadeTime</fadetime>
-                    <texture fallback="splashm.png" background="true">$INFO[ListItem.Art(fanart)]</texture>
-                    <bordersize>8</bordersize>
+                    <texture>$INFO[ListItem.Art(clearart)]</texture>
                     <visible>!Player.HasVideo | !Skin.HasSetting(videowindowglobal)</visible>
                     <visible>!Skin.HasSetting(Smallwindowhidden)</visible>
                 </control>
@@ -402,6 +407,8 @@
                     <visible>!Skin.HasSetting(Smallwindowhidden)</visible>
                     <visible>!Skin.HasSetting(originalwatched)</visible>
                 </control>
+				
+				<!-- Trailer icon
                 <control type="image">
                     <left>708</left>
                     <top>43</top>
@@ -413,7 +420,7 @@
                     <visible>!IsEmpty(ListItem.Trailer) + !Skin.HasSetting(trailerflag)</visible>
                     <visible>!Player.HasVideo | !Skin.HasSetting(videowindowglobal)</visible>
                     <visible>!Skin.HasSetting(Smallwindowhidden)</visible>
-                </control>
+                </control> -->
                 <!-- Changes Ending -->
                 <control type="grouplist">
                     <description>Media Codec Flagging Images</description>
@@ -468,13 +475,14 @@
                 <visible>Skin.HasSetting(NewMPAAFlags) + !Skin.HasSetting(imdbnrfanart)</visible>
                 <visible>!ListItem.IsFolder</visible>
             </control>
+			<!-- Film csillag -->
             <control type="image">
                 <description>Rating value</description>
-                <left>15</left>
-                <top>340</top>
+                <left>140</left>
+                <top>80</top>
                 <align>left</align>
-                <width>200</width>
-                <height>40</height>
+                <width>100</width>
+                <height>20</height>
                 <texture>$INFO[Listitem.StarRating]</texture>
                 <visible>!Skin.HasSetting(imdbnrfanart)</visible> 
                 <visible>!ListItem.IsFolder</visible>
@@ -538,6 +546,12 @@
                 <effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300"/>
                 <effect type="fade" start="100" end="0" time="300"/>
             </animation> 
+			
+			<animation effect="fade" start="100" end="0" time="400" tween="sine" easing="inout" condition="Window.IsVisible(DialogProgress.xml)">Conditional</animation>
+			<animation effect="fade" start="100" end="0" time="400" tween="sine" easing="inout" condition="Window.IsVisible(DialogSelect.xml)">Conditional</animation>
+			<animation effect="fade" start="100" end="0" time="400" tween="sine" easing="inout" condition="Window.IsVisible(DialogYesNo.xml)">Conditional</animation>
+			<animation effect="fade" start="100" end="0" time="400" tween="sine" easing="inout" condition="Window.IsVisible(DialogOK.xml)">Conditional</animation>
+			
             <control type="image">
                 <left>-100</left>
                 <top>-10</top>

@@ -194,7 +194,7 @@
         <!-- view id = 721 -->
         <include>MusicWallView</include>
         <!-- view id = 525-->
-        <include>CommonPageCount</include>
+        <!-- <include>CommonPageCount</include> -->
         <!-- ==================== VIEW OPTIONS FLYOUT MENU ========================== -->
         <!-- LABELS FOR MUSIC VIDEO BREADCRUMB TRAIL -->
         <control type="group">
@@ -317,8 +317,8 @@
         </control>
         <control type="group">
             <visible>!Skin.HasSetting(kiosk)</visible>
-            <animation effect="slide" start="0,0" end="280,0" time="400" tween="quadratic" easing="out" condition="ControlGroup(9000).HasFocus | ControlGroup(9001).HasFocus | Control.HasFocus(8999)">Conditional</animation>
-            <animation effect="slide" start="0,0" end="-380,0" time="400" tween="quadratic" easing="out" condition="ControlGroup(9000).HasFocus | ControlGroup(9001).HasFocus">WindowClose</animation>
+            <animation effect="slide" start="0,0" end="480,0" time="400" tween="quadratic" easing="out" condition="ControlGroup(9000).HasFocus | ControlGroup(9001).HasFocus | Control.HasFocus(8999)">Conditional</animation>
+            <animation effect="slide" start="0,0" end="-480,0" time="400" tween="quadratic" easing="out" condition="ControlGroup(9000).HasFocus | ControlGroup(9001).HasFocus">WindowClose</animation>
             <control type="button" id="8999">
                 <description>Fake button for mouse control</description>
                 <left>-260</left>
@@ -337,25 +337,25 @@
                 <top>0</top>
                 <width>820</width>
                 <height>720</height>
-                <texture border="5">dialogbackground.png</texture>
+                <texture border="5">mask/mask_black20.png</texture>
                 <aspectratio>stretch</aspectratio>
             </control>
-            <control type="image">
+<!--             <control type="image">
                 <left>-820</left>
                 <top>0</top>
                 <width>820</width>
                 <height>720</height>
                 <texture border="5">dialogbackground.png</texture>
                 <aspectratio>stretch</aspectratio>
-            </control>
-            <control type="image">
+            </control> -->
+<!--             <control type="image">
                 <left>-250</left>
                 <top>650</top>
                 <width>160</width>
                 <height>40</height>
                 <aspectratio>keep</aspectratio>
                 <texture>cirrusLogo.png</texture>
-            </control>
+            </control> -->
             <!-- eye image and view options label at top of menu -->
             <control type="group">   
                 <left>-240</left>
@@ -363,12 +363,11 @@
                 <control type="label">
                     <description>View options</description>
                     <left>0</left>
-                    <top>0</top>
+                    <top>15</top>
                     <width>250</width>
                     <height>30</height>
-                    <font>cirrus_24</font>
-                    <textcolor>accent</textcolor>
-                    <shadowcolor>black</shadowcolor>
+                    <font>font13</font>
+                    <textcolor>E8FFFFFF</textcolor>
                     <scroll>false</scroll>
                     <align>left</align>
                     <aligny>center</aligny>
@@ -379,7 +378,7 @@
             <control type="group" id="9000">
                 <left>-260</left>
                 <top>70</top>
-                <!-- <include>CommonNowPlaying</include> --> <!-- GET RID OF FROM INCLUDES? -->
+			<!-- <include>CommonNowPlaying</include> -->
                 <control type="button" id="2">
                     <description>View As button</description>
                     <left>0</left>
@@ -414,16 +413,16 @@
                     <onup>3</onup>
                     <ondown>9010</ondown>
                 </control>
-                <!-- GROUP OF RADIO BUTTONS  -->
+                <!-- GROUP OF RADIO BUTTONS Oldalsó sáv  -->
                 <control type="grouplist" id="9010">
                     <left>0</left>
-                    <top>80</top>
+                    <top>180</top>
                     <width>250</width>
                     <height>450</height>
                     <onleft>55</onleft>
                     <onright>55</onright>
                     <onup>3</onup>
-                    <ondown>2</ondown>
+                    <ondown>9012</ondown>
                     <itemgap>0</itemgap>
                     <control type="togglebutton" id="20">
                         <description>Scan Library</description>
@@ -479,6 +478,7 @@
                         <onclick>RunPlugin(plugin://script.simpleplaylists/?mode=addCurrentUrl)</onclick>
                         <visible>Container.Content(Movies) | Container.Content(Episodes) + System.HasAddon(script.simpleplaylists)</visible>
                     </control>
+				
                     <control type="radiobutton" id="201">
                         <description>Toggle MoviesFanart</description>
                         <include>ButtonCommonValues</include>
@@ -504,12 +504,78 @@
                         <selected>Skin.HasSetting(VideoLibraryMovieExtrathumbs)</selected>
                         <visible>Container.Content(Movies) + !Control.IsVisible(668) + [!Container.Content(TVShows) + !Container.Content(Seasons) | Control.IsVisible(666) | Control.IsVisible(721) | Control.IsVisible(508)]</visible>
                     </control>
-                    <control type="radiobutton" id="2059">
-                        <description>Toggle Dim Fanart</description>
+
+					<control type="radiobutton" id="149">
+                        <description>selected-</description>
                         <include>ButtonCommonValues</include>
-                        <label>41202</label>
-                        <onclick>Skin.ToggleSetting(VideoLibraryDimFanart)</onclick>
-                        <selected>Skin.HasSetting(VideoLibraryDimFanart)</selected>
+                        <label>selected-</label>
+						<!-- <textcolor>white</textcolor> -->
+                        <onclick>Skin.ToggleSetting(selected-)</onclick>
+                        <selected>Skin.HasSetting(selected-)</selected>
+                    </control>
+					<control type="radiobutton" id="148">
+                        <description>font-</description>
+                        <include>ButtonCommonValues</include>
+                        <label>font-</label>
+						<!-- <textcolor>white</textcolor> -->
+                        <onclick>Skin.ToggleSetting(font-)</onclick>
+                        <selected>Skin.HasSetting(font-)</selected>
+                    </control>
+					<control type="radiobutton" id="147">
+                        <description>font--</description>
+                        <include>ButtonCommonValues</include>
+                        <label>font--</label>
+						<!-- <textcolor>white</textcolor> -->
+                        <onclick>Skin.ToggleSetting(font--)</onclick>
+                        <selected>Skin.HasSetting(font--)</selected>
+                    </control>					
+					<control type="radiobutton" id="146">
+                        <description>selected--</description>
+                        <include>ButtonCommonValues</include>
+                        <label>selected--</label>
+						<!-- <textcolor>white</textcolor> -->
+                        <onclick>Skin.ToggleSetting(selected--)</onclick>
+                        <selected>Skin.HasSetting(selected--)</selected>
+                    </control>
+					<control type="radiobutton" id="145">
+                        <description>Hide Cover</description>
+                        <include>ButtonCommonValues</include>
+                        <label>Hide Cover</label>
+						<!-- <textcolor>white</textcolor> -->
+                        <onclick>Skin.ToggleSetting(cover)</onclick>
+                        <selected>Skin.HasSetting(cover)</selected>
+                    </control>
+					<control type="radiobutton" id="144">
+                        <description>Hide Fanart</description>
+                        <include>ButtonCommonValues</include>
+                        <label>Hide Fanart</label>
+						<!-- <textcolor>white</textcolor> -->
+                        <onclick>Skin.ToggleSetting(fanart)</onclick>
+                        <selected>Skin.HasSetting(fanart)</selected>
+                    </control>
+					<control type="radiobutton" id="143">
+                        <description>Hide landscape</description>
+                        <include>ButtonCommonValues</include>
+                        <label>Hide landscape</label>
+						<!-- <textcolor>white</textcolor> -->
+                        <onclick>Skin.ToggleSetting(landscape)</onclick>
+                        <selected>Skin.HasSetting(landscape)</selected>
+                    </control>
+					<control type="radiobutton" id="142">
+                        <description>Hide logo</description>
+                        <include>ButtonCommonValues</include>
+                        <label>Hide logo</label>
+						<!-- <textcolor>white</textcolor> -->
+                        <onclick>Skin.ToggleSetting(logo)</onclick>
+                        <selected>Skin.HasSetting(logo)</selected>
+                    </control>
+					<control type="radiobutton" id="141">
+                        <description>Hide clearart</description>
+                        <include>ButtonCommonValues</include>
+                        <label>Hide clearart</label>
+						<!-- <textcolor>white</textcolor> -->
+                        <onclick>Skin.ToggleSetting(clearart)</onclick>
+                        <selected>Skin.HasSetting(clearart)</selected>
                     </control>
                     <control type="radiobutton" id="202">
                         <description>Toggle TVShow Fanart</description>
@@ -552,6 +618,15 @@
                         <selected>Skin.HasSetting(SmallwindowhiddenTV)</selected>
                         <visible>Control.IsVisible(508) + !Container.Content(Movies) | Control.IsVisible(508) + Container.Content(TVShows) + Container.Content(Seasons) + Container.Content(Episodes)</visible>
                     </control>
+					
+					<control type="radiobutton" id="207">
+                        <description>Color Background</description>
+                        <include>ButtonCommonValues</include>
+                        <label>Hide Color Background</label>
+                        <onclick>Skin.ToggleSetting(Color Background)</onclick>
+                        <selected>Skin.HasSetting(Color Background)</selected>
+                    </control>
+					
                     <control type="radiobutton" id="1029">
                         <description>Enable Landscape.jpg for TV FanartView</description>
                         <include>ButtonCommonValues</include>
@@ -700,6 +775,78 @@
                         <label>137</label>
                     </control>
                 </control>
+				<!-- Background view -->
+
+ 				 
+				<control type="radiobutton" id="9012">
+						<radioposy>65</radioposy>
+						<radioposx>15</radioposx>
+						<width>35</width>
+						<height>35</height>
+						<top>100</top>
+						<left>0</left>
+						<textoffsety>40</textoffsety>
+						<textoffsetx>-15</textoffsetx>
+                        <description>Dark Layer</description>
+                        <include>ButtonMedia</include>
+                        <label>Dark Layer</label>
+						<texturenofocus colordiffuse="5FFFFFFF">icons/interface.png</texturenofocus>
+						<texturefocus  colordiffuse="8FFFFFFF">icons/interface.png</texturefocus>
+ 						<onclick>Skin.ToggleSetting(Dark Layer)</onclick>
+<!--						<onunfocus>Skin.ToggleSetting(Dark Layer)</onunfocus> -->
+						<selected>Skin.HasSetting(Dark Layer)</selected>
+						<onleft>150</onleft>
+						<onright>150</onright>
+						<ondown>9010</ondown>
+						<!-- Fanart viewban nem látható <visible>!Control.IsVisible(508)</visible> -->
+                    </control>
+					<control type="radiobutton" id="150">
+						<radioposy>65</radioposy>
+						<radioposx>15</radioposx>
+						<width>35</width>
+						<height>35</height>
+						<top>100</top>
+						<left>100</left>
+						<textoffsety>40</textoffsety>
+						<textoffsetx>-15</textoffsetx>
+                        <description>Grey Layer</description>
+                        <include>ButtonMedia</include>
+                        <label>Grey Layer</label>
+						<texturenofocus colordiffuse="5FFFFFFF">icons/interface.png</texturenofocus>
+						<texturefocus  colordiffuse="8FFFFFFF">icons/interface.png</texturefocus>
+						<onclick>Skin.ToggleSetting(Grey Layer)</onclick>
+<!--                         <onfocus>Skin.ToggleSetting(Grey Layer)</onfocus> -->
+                        <selected>Skin.HasSetting(Grey Layer)</selected>
+						<onleft>9012</onleft>
+						<onright>9013</onright>
+						<ondown>9010</ondown>
+                    </control>
+					
+										<control type="radiobutton" id="9013">
+						<radioposy>65</radioposy>
+						<radioposx>15</radioposx>
+						<width>35</width>
+						<height>35</height>
+						<top>200</top>
+						<left>0</left>
+						<textoffsety>40</textoffsety>
+						<textoffsetx>-15</textoffsetx>
+                        <description>List</description>
+                        <include>ButtonMedia</include>
+                        <label>List</label>
+						<texturenofocus colordiffuse="5FFFFFFF">icons/interface.png</texturenofocus>
+						<texturefocus  colordiffuse="8FFFFFFF">icons/interface.png</texturefocus>
+						<onclick>Skin.ToggleSetting(list)</onclick>
+<!--                         <onfocus>Skin.ToggleSetting(Grey Layer)</onfocus> -->
+						<!-- <visible>Control.IsVisible(150)</visible> -->
+                        <selected>Skin.HasSetting(list)</selected>
+						<onleft>9012</onleft>
+						<onright>9014</onright>
+						<ondown>9010</ondown>
+                    </control>
+					
+
+				 
             </control>
         </control>
         <!-- Mod Scroll List Letter -->
