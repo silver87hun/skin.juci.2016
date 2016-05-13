@@ -58,6 +58,7 @@
             <animation effect="zoom" start="110" end="135" center="auto" time="15000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(animation_bg)">Conditional</animation>
             <animation effect="slide" end="-20,-20" delay="4000" time="8000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(animation_bg)">Conditional</animation>
             <animation effect="slide" end="40,0" delay="10000" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(animation_bg)">Conditional</animation>
+			<!-- <animation effect="fade" start="100" end="0" time="200" tween="sine" easing="inout" condition="!Skin.HasSetting(Grey Layer)">Conditional</animation> -->
 			<visible>!Skin.HasSetting(Dark Layer)</visible>
         </control>
 		
@@ -72,6 +73,7 @@
             <animation effect="slide" end="-20,-20" delay="4000" time="8000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(animation_bg)">Conditional</animation>
             <animation effect="slide" end="40,0" delay="10000" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(animation_bg)">Conditional</animation>
 			<visible>!Skin.HasSetting(Grey Layer)</visible>
+			<!-- <animation effect="fade" start="100" end="0" time="200" tween="sine" easing="inout" condition="!Skin.HasSetting(Dark Layer)">Conditional</animation> -->
         </control>
 		
 				<control type="image">
@@ -84,7 +86,22 @@
             <animation effect="zoom" start="110" end="135" center="auto" time="15000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(animation_bg)">Conditional</animation>
             <animation effect="slide" end="-20,-20" delay="4000" time="8000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(animation_bg)">Conditional</animation>
             <animation effect="slide" end="40,0" delay="10000" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(animation_bg)">Conditional</animation>
+			<!-- <animation effect="fade" start="100" end="0" time="200" tween="sine" easing="inout" condition="!Skin.HasSetting(Dark Layer)">Conditional</animation> -->
 			<visible>!Skin.HasSetting(Grey Layer)</visible>
+        </control>
+		
+						<control type="image">
+            <visible>!Skin.HasSetting(Menu_RandomCustom1)</visible>
+            <left>0</left>
+            <top>0</top>
+            <width>1280</width>
+            <height>720</height>
+            <texture>mask/blur.png</texture>
+            <animation effect="zoom" start="110" end="135" center="auto" time="15000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(animation_bg)">Conditional</animation>
+            <animation effect="slide" end="-20,-20" delay="4000" time="8000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(animation_bg)">Conditional</animation>
+            <animation effect="slide" end="40,0" delay="10000" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(animation_bg)">Conditional</animation>
+			<!-- <animation effect="fade" start="100" end="0" time="200" tween="sine" easing="inout" condition="!Skin.HasSetting(Dark Layer)">Conditional</animation> -->
+			<visible>!Skin.HasSetting(blur)</visible>
         </control>
 			
             <include>Window_OpenClose_Animation</include>
@@ -98,7 +115,7 @@
                 <visible>Control.IsVisible(55)</visible>
                 <control type="image">
 				<animation effect="fade" start="100" end="0" time="400" tween="sine" easing="inout" condition="Window.IsVisible(DialogContextMenu.xml)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="140,0" time="400" tween="quadratic" easing="out" condition="ControlGroup(9000).HasFocus | ControlGroup(9001).HasFocus | Control.HasFocus(8999)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="150,0" time="400" tween="quadratic" easing="out" condition="ControlGroup(9000).HasFocus | ControlGroup(9001).HasFocus | Control.HasFocus(8999)">Conditional</animation>
                     <left>800</left>
                     <top>0</top>
                     <width>700</width>
@@ -106,8 +123,8 @@
                     <texture>mask/mask_black20.png</texture>
                 </control>
                  <control type="image">
-				             <animation effect="slide" start="0,0" end="480,0" time="400" tween="quadratic" easing="out" condition="ControlGroup(9000).HasFocus | ControlGroup(9001).HasFocus | Control.HasFocus(8999)">Conditional</animation>
-            <animation effect="slide" start="0,0" end="-380,0" time="400" tween="quadratic" easing="out" condition="ControlGroup(9000).HasFocus | ControlGroup(9001).HasFocus">WindowClose</animation>
+				             <animation effect="slide" start="0,0" end="440,0" time="400" tween="quadratic" easing="out" condition="ControlGroup(9000).HasFocus | ControlGroup(9001).HasFocus | Control.HasFocus(8999)">Conditional</animation>
+             <animation effect="slide" start="0,0" end="-380,0" time="400" tween="quadratic" easing="out" condition="ControlGroup(9000).HasFocus | ControlGroup(9001).HasFocus">WindowClose</animation>
                     <left>0</left>
                     <top>340</top>
                     <width>30</width>
@@ -144,7 +161,7 @@
 		
 
         <control type="group">
-		<visible>!Skin.HasSetting(List)</visible>
+		<!-- <visible>!Skin.HasSetting(List)</visible> -->
 				 <animation effect="fade" start="100" end="0" time="400" tween="sine" easing="inout" condition="Window.IsVisible(DialogProgress.xml)">Conditional</animation>
 				 <animation effect="fade" start="100" end="0" time="400" tween="sine" easing="inout" condition="Window.IsVisible(DialogSelect.xml)">Conditional</animation>
 		<animation effect="fade" start="100" end="0" time="400" tween="sine" easing="inout" condition="Window.IsVisible(DialogYesNo.xml">Conditional</animation>
@@ -160,10 +177,10 @@
             <visible>Control.IsVisible(55)</visible>
             <include>VisibleFadeEffect</include>
             <control type="list" id="55">
-				<animation effect="slide" start="0,0" end="330,0" time="400" tween="quadratic" easing="out" condition="ControlGroup(9000).HasFocus | ControlGroup(9001).HasFocus | Control.HasFocus(8999)">Conditional</animation>
+				 <animation effect="slide" start="0,0" end="290,0" time="400" tween="quadratic" easing="out" condition="ControlGroup(9000).HasFocus | ControlGroup(9001).HasFocus | Control.HasFocus(8999)">Conditional</animation>
 				<animation effect="slide" start="0,0" end="-180,0" time="400" tween="quadratic" easing="out" condition="ControlGroup(9000).HasFocus | ControlGroup(9001).HasFocus">WindowClose</animation>
-				<animation effect="zoom" start="100" end="65" time="400" center="auto" tween="quadratic" easing="out" condition="ControlGroup(9000).HasFocus | ControlGroup(9001).HasFocus | Control.HasFocus(8999) | Window.IsVisible(DialogContextMenu.xml)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="-180,0" time="400" tween="quadratic" easing="out" condition="ControlGroup(9000).HasFocus | ControlGroup(9001).HasFocus">WindowClose</animation>
+				 <animation effect="zoom" start="100" end="65" time="400" center="auto" tween="quadratic" easing="out" condition="ControlGroup(9000).HasFocus | ControlGroup(9001).HasFocus | Control.HasFocus(8999) | Window.IsVisible(DialogContextMenu.xml)">Conditional</animation>
+				 <animation effect="slide" start="0,0" end="-180,0" time="400" tween="quadratic" easing="out" condition="ControlGroup(9000).HasFocus | ControlGroup(9001).HasFocus">WindowClose</animation>
 				<animation effect="slide" start="0,0" end="0,-200" time="400" tween="quadratic" easing="out" condition="Window.IsVisible(DialogContextMenu.xml">Conditional</animation>
 				
                 <left>60</left>
@@ -416,8 +433,8 @@
                 </focusedlayout>
             </control>
             <control type="scrollbar" id="60">
-			<animation effect="fade" start="100" end="0" time="200" center="auto" tween="quadratic" easing="out" condition="ControlGroup(9000).HasFocus | ControlGroup(9001).HasFocus | Control.HasFocus(8999)">Conditional</animation>
-			
+			<animation effect="slide" start="0,0" end="160,0" time="400" tween="quadratic" easing="out" condition="ControlGroup(9000).HasFocus | ControlGroup(9001).HasFocus | Control.HasFocus(8999)">Conditional</animation>
+			<animation effect="zoom" start="100" end="75" time="400" center="auto" tween="quadratic" easing="out" condition="ControlGroup(9000).HasFocus | ControlGroup(9001).HasFocus | Control.HasFocus(8999) | ControlGroup(9021).HasFocus | Window.IsVisible(DialogContextMenu.xml)">Conditional</animation>
                 <left>780</left>
                 <top>95</top>
                 <width>5</width>
@@ -434,7 +451,7 @@
                 <visible>Control.IsVisible(55)</visible>
             </control>
             <control type="group">
- 			<animation effect="zoom" start="100" end="65" time="400" center="auto" tween="quadratic" easing="out" condition="ControlGroup(9000).HasFocus | ControlGroup(9001).HasFocus | Control.HasFocus(8999) | ControlGroup(9021).HasFocus | Window.IsVisible(DialogContextMenu.xml)">Conditional</animation>
+  			<animation effect="zoom" start="100" end="65" time="400" center="auto" tween="quadratic" easing="out" condition="ControlGroup(9000).HasFocus | ControlGroup(9001).HasFocus | Control.HasFocus(8999) | ControlGroup(9021).HasFocus | Window.IsVisible(DialogContextMenu.xml)">Conditional</animation>
 			<animation effect="slide" start="0,0" end="0,-100" time="400" tween="quadratic" easing="out" condition="ControlGroup(9021).HasFocus">Conditional</animation>
 			<animation effect="slide" start="0,0" end="0,-200" time="400" tween="quadratic" easing="out" condition="Window.IsVisible(DialogContextMenu.xml">Conditional</animation>
 			<animation effect="slide" start="0,0" end="100,0" time="400" tween="quadratic" easing="out" condition="ControlGroup(9000).HasFocus | ControlGroup(9001).HasFocus | Control.HasFocus(8999)">Conditional</animation>
@@ -456,6 +473,7 @@
 					<visible>!Skin.HasSetting(cover)</visible>
                 </control>
 				<control type="image">
+					<animation effect="slide" start="0,0" end="0,-300" time="400" tween="cubic"  condition="Skin.HasSetting(lower)">Conditional</animation>
                     <left>-40</left>
                     <top>150</top>
                     <width>460</width>
@@ -469,6 +487,7 @@
 					<visible>!Skin.HasSetting(fanart)</visible>
                 </control>
 				<control type="image">
+				<animation effect="slide" start="0,0" end="0,-300" time="400" tween="cubic"  condition="Skin.HasSetting(lower)">Conditional</animation>
                     <left>-40</left>
                     <top>150</top>
                     <width>460</width>
@@ -482,6 +501,7 @@
 					<visible>!Skin.HasSetting(landscape)</visible>
                 </control>
 				<control type="image">
+					<animation effect="slide" start="0,0" end="0,300" time="400" tween="cubic"  condition="Skin.HasSetting(lower)">Conditional</animation>
                     <left>-40</left>
                     <top>-150</top>
                     <width>460</width>
@@ -494,7 +514,11 @@
                     <visible>!Container.Content(Genres)</visible>
 					<visible>!Skin.HasSetting(logo)</visible>
                 </control>
+			
 				<control type="image">
+				<animation effect="slide" start="0,0" end="0,300" time="400" tween="cubic"  condition="Skin.HasSetting(lower)">Conditional</animation>
+				<!-- <animation effect="slide" start="0,0" end="0,-100" time="400" tween="cubic"  condition="Skin.HasSetting(lowered)">Conditional</animation> -->
+            
                     <left>-40</left>
                     <top>-150</top>
                     <width>460</width>
@@ -531,7 +555,7 @@
             </control>
         </control>
 				 <control type="group" id="9021">
-				 <animation effect="fade" start="100" end="0" time="200" center="auto" tween="quadratic" easing="out" condition="ControlGroup(9000).HasFocus | ControlGroup(9001).HasFocus | Control.HasFocus(8999)">Conditional</animation>
+				  <animation effect="fade" start="100" end="0" time="200" center="auto" tween="quadratic" easing="out" condition="ControlGroup(9000).HasFocus | ControlGroup(9001).HasFocus | Control.HasFocus(8999)">Conditional</animation>
 				 <animation effect="fade" start="100" end="0" time="400" tween="sine" easing="inout" condition="Window.IsVisible(DialogProgress.xml)">Conditional</animation>
 				 <animation effect="fade" start="100" end="0" time="400" tween="sine" easing="inout" condition="Window.IsVisible(DialogSelect.xml)">Conditional</animation>
 				<animation effect="fade" start="100" end="0" time="400" tween="sine" easing="inout" condition="Window.IsVisible(DialogYesNo.xml)">Conditional</animation>
@@ -581,6 +605,22 @@
                     <onup>55</onup>
                     <ondown>55</ondown>
                 </control>
+				
+				    <control type="textbox">
+                    <!-- Plotoutline Mod -->
+                    <description>Movie Plot</description>
+                    <left>145</left>
+                    <top>130</top>
+                    <width>330</width>
+                    <height>70</height>
+                    <font>font10</font>
+                    <align>justify</align>
+                    <textcolor>8FFFFFFF</textcolor>
+                    <label>$INFO[ListItem.Plot]</label>
+                    <autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
+                    <visible>!Skin.HasSetting(plotoutline)</visible>
+                </control>
+				
               <!--   <control type="button" id="8">
                     <description>Cinema</description>
                     <left>0</left>

@@ -2,7 +2,7 @@
 <window id="25">
     <defaultcontrol always="true">55</defaultcontrol>
     <onload condition="System.HasAddon(script.tv.show.next.aired) + IsEmpty(Window(Home).Property(DontRunTVShowScripts))">RunScript(script.tv.show.next.aired,backend=True)</onload>
-    <views>55,60,52,515,508,666,556,555,667,569,668,570,513,519,571,514,560,590,591,592,593,594,595,511,700,691,766,525,720,721</views>
+    <views>55,52,515,508,666,556,555,667,569,668,570,513,519,571,514,560,590,591,592,593,594,595,511,700,691,766,525,720,721</views>
     <!-- Hide menu if kiosk mode turned ON -->
     <visible>!Skin.HasSetting(kiosk)</visible>
     <controls>
@@ -335,9 +335,9 @@
             <control type="image">
                 <left>-1280</left>
                 <top>0</top>
-                <width>440</width>
+                <width>1280</width>
                 <height>720</height>
-                <texture>mask/mask_black90.png</texture>
+                <texture>mask/mask_black70.png</texture>
                 <aspectratio>stretch</aspectratio>
             </control>
 <!--             <control type="image">
@@ -362,7 +362,7 @@
                 <top>20</top>
                 <control type="label">
                     <description>View options</description>
-                    <left>-900</left>
+                    <left>-480</left>
                     <top>15</top>
                     <width>250</width>
                     <height>30</height>
@@ -384,38 +384,17 @@
 			<!-- <include>CommonNowPlaying</include> -->
                 <control type="button" id="2">
                     <description>View As button</description>
-                    <left>-540</left>
+                    <left>-110</left>
                     <top>-20</top>
                     <include>ButtonCommonValues</include>
                     <label>-</label>
-                    <onleft>4999</onleft>
-                    <onright>5000</onright>
-                    <onup>55</onup>
-                    <ondown>5000</ondown>
+                    <onleft>55</onleft>
+                    <onright>55</onright>
+                    <onup>8</onup>
+                    <ondown>4999</ondown>
                 </control>
-				
-
-					
-					<control type="image">
-						<left>-480</left>
-						<top>60</top>
-						<width>50</width>
-						<height>50</height>
-						<texture>icons/management.png</texture>
-						<colordiffuse>5FFFFFFF</colordiffuse>
-						<visible>!Skin.HasSetting(Customize)</visible>
-						<visible>!Skin.HasSetting(6000)</visible>
-						<animation effect="fade" start="0" end="100" time="200" tween="sine" easing="inout" condition="!Skin.HasSetting(Customize)">Conditional</animation>
-						<animation effect="slide" start="70" end="0" time="200" tween="sine" easing="inout" condition="!Skin.HasSetting(Function)">Conditional</animation>
-					</control>
-					
-
-					
 					<control type="button" id="4999">
-					<animation effect="slide" start="-70" end="0" time="200" tween="sine" easing="inout" condition="!Skin.HasSetting(Customize)">Conditional</animation>
-					<animation effect="slide" start="70" end="0" time="200" tween="sine" easing="inout" condition="!Skin.HasSetting(Function)">Conditional</animation>
-						<left>-580</left>
-						<top>110</top>
+						<left>-500</left>
                         <description>Function</description>
                         <include>ButtonCommonValues</include>
                         <label>Function</label>
@@ -424,31 +403,11 @@
 						<onright>5000</onright>
 						<onup>2</onup>
 						<ondown>6000</ondown>
-					 <visible>!Skin.HasSetting(Customize)</visible>
-					 <visible>!Skin.HasSetting(6000)</visible>
-					 <animation effect="fade" start="0" end="100" time="200" tween="sine" easing="inout" condition="!Skin.HasSetting(Customize)">Conditional</animation>
+					 <!-- <visible>Skin.HasFo()</visible> -->
+					 <!-- <animation effect="slide" start="0,0" end="-1000" time="200" tween="sine" easing="inout" condition="!Skin.HasSetting(Customize)">Conditional</animation> -->
                     </control>
-					
-
-
-					
-					<control type="image">
-						<left>-370</left>
-						<top>60</top>
-						<width>50</width>
-						<height>50</height>
-						<texture>icons/settings.png</texture>
-						<colordiffuse>5FFFFFFF</colordiffuse>
-						<visible>!Skin.HasSetting(Function)</visible>
-						<animation effect="fade" start="0" end="100" time="200" tween="sine" easing="inout" condition="!Skin.HasSetting(Function)">Conditional</animation>
-						<animation effect="slide" start="-70" end="0" time="200" tween="sine" easing="inout" condition="!Skin.HasSetting(Customize)">Conditional</animation>
-					</control>					
-					
+				
 					<control type="button" id="5000">
-					<animation effect="slide" start="-70" end="0" time="200" tween="sine" easing="inout" condition="!Skin.HasSetting(Customize)">Conditional</animation>
-					<animation effect="slide" start="180" end="0" time="200" tween="sine" easing="inout" condition="!Skin.HasSetting(Function)">Conditional</animation>
-						<left>-470</left>
-						<top>110</top>
                         <description>Customize</description>
                         <include>ButtonCommonValues</include>
 						 <alttexturefocus border="0" flipx="true">listwhitegradient.png</alttexturefocus>
@@ -458,17 +417,11 @@
 						<onright>4999</onright>
 						<onup>2</onup>
 						<ondown>5001</ondown>
-					 <visible>!Skin.HasSetting(Function)</visible>
-					 <animation effect="fade" start="0" end="100" time="200" tween="sine" easing="inout" condition="!Skin.HasSetting(Function)">Conditional</animation>
                     </control>
-					
-
 
 				<!-- funkciók -->
 				<control type="grouplist" id="6000">
-				
-				<left>-500</left>
-				<top>150</top>
+				<left>-300</left>
 				<visible>Skin.HasSetting(Function)</visible>
 				
 			
@@ -511,10 +464,17 @@
                         <label>589</label>
                         <include>ButtonCommonValues</include>
                     </control>
-					
-					
-					
-					<!--  <control type="grouplist" id="9010"> -->
+				</control>
+				
+				
+				<!-- Customize -->
+				<control type="grouplist" id="7000">
+
+				</control>
+				
+				
+                <!-- GROUP OF RADIO BUTTONS Oldalsó sáv  -->
+                <control type="grouplist" id="9010">
                     <left>0</left>
                     <top>180</top>
                     <width>250</width>
@@ -522,7 +482,7 @@
                     <onleft>55</onleft>
                     <onright>55</onright>
                     <onup>3</onup>
-                    <ondown>207</ondown>
+                    <ondown>9012</ondown>
                     <itemgap>0</itemgap>
                     
                     <control type="radiobutton" id="14">
@@ -566,7 +526,23 @@
                         <visible>Container.Content(Movies) | Container.Content(Episodes) + System.HasAddon(script.simpleplaylists)</visible>
                     </control>
 				
-
+                    <control type="radiobutton" id="201">
+                        <description>Toggle MoviesFanart</description>
+                        <include>ButtonCommonValues</include>
+                        <label>31307</label>
+                        <onclick>Skin.ToggleSetting(VideoLibraryMovieFanart)</onclick>
+                        <selected>Skin.HasSetting(VideoLibraryMovieFanart)</selected>
+                        <visible>Container.Content(Movies)</visible>
+                    </control>
+                    <control type="radiobutton" id="2060">
+                        <description>Toggle BlackFanart</description>
+                        <include>ButtonCommonValues</include>
+                        <label>41203</label>
+                        <onclick>Skin.ToggleSetting(VideoLibraryBlackFanart)</onclick>
+                        <selected>Skin.HasSetting(VideoLibraryBlackFanart)</selected>
+                        <enable>Skin.HasSetting(VideoLibraryMovieFanart)</enable>
+                        <visible>Container.Content(Movies) + Skin.HasSetting(VideoLibraryMovieFanart)</visible>
+                    </control>
                     <control type="radiobutton" id="2058">
                         <description>Toggle Extrathumbs</description>
                         <include>ButtonCommonValues</include>
@@ -708,7 +684,13 @@
                         <visible>Control.IsVisible(508) + !Container.Content(Movies) | Control.IsVisible(508) + Container.Content(TVShows) + Container.Content(Seasons) + Container.Content(Episodes)</visible>
                     </control>
 					
-
+					<control type="radiobutton" id="207">
+                        <description>Color Background</description>
+                        <include>ButtonCommonValues</include>
+                        <label>Hide Color Background</label>
+                        <onclick>Skin.ToggleSetting(Color Background)</onclick>
+                        <selected>Skin.HasSetting(Color Background)</selected>
+                    </control>
 					
                     <control type="radiobutton" id="1029">
                         <description>Enable Landscape.jpg for TV FanartView</description>
@@ -859,72 +841,18 @@
                     </control>
 					
 
-                <!-- </control> -->
-					
-					
-				</control>
-				
-				
-
-
-				
-				
-                <!-- GROUP OF RADIO BUTTONS Oldalsó sáv  -->
-               
+                </control>
 				<!-- Background view -->
-				<!-- Customize LIST VIEW-->
-			<control type="group" id="5001">
+			<control type="grouplist" id="5001">
  				 <visible>Skin.HasSetting(Customize)</visible>
-				 <top>100</top>
-				 <visible>!Control.IsVisible(508)</visible>
-						
-<!-- 						<control type="image">
-						<left>30</left>
-						<top>90</top>
-						<width>180</width>
-						<height>100</height>
-						<texture border="5">mask/mask_black70.png</texture>
-						</control> -->
-					
-					<control type="radiobutton" id="207">
-						<radioposy>60</radioposy>
-						<radioposx>15</radioposx>
-						<width>35</width>
-						<height>35</height>
-						<top>105</top>
-						<left>-550</left>
-						<textoffsety>35</textoffsety>
-						<textoffsetx>-40</textoffsetx>
-                        <description>blur</description>
-                        <include>ButtonMedia</include>
-						<texturenofocus colordiffuse="5FFFFFFF">icons/layer-button.png</texturenofocus>
-						<texturefocus  colordiffuse="8FFFFFFF">icons/layer-button.png</texturefocus>
-                        <description>Color Background</description>
-                        <label>Color Background</label>
-                        <onclick>Skin.ToggleSetting(Color Background)</onclick>
-                        <selected>Skin.HasSetting(Color Background)</selected>
-						<onleft>151</onleft>
-						<onright>9012</onright>
-						<ondown>201</ondown>
-						<onup>5000</onup>
-                    </control>
-						
-<!-- 						<control type="image">
-						<left>-570</left>
-						<top>90</top>
-						<width>180</width>
-						<height>100</height>
-						<texture border="5">mask/mask_black70.png</texture>
-						</control> -->
-						
 				<control type="radiobutton" id="9012">
-						<radioposy>60</radioposy>
+						<radioposy>65</radioposy>
 						<radioposx>15</radioposx>
 						<width>35</width>
 						<height>35</height>
-						<top>105</top>
-						<left>-450</left>
-						<textoffsety>35</textoffsety>
+						<top>100</top>
+						<left>0</left>
+						<textoffsety>40</textoffsety>
 						<textoffsetx>-15</textoffsetx>
                         <description>Dark Layer</description>
                         <include>ButtonMedia</include>
@@ -934,567 +862,58 @@
  						<onclick>Skin.ToggleSetting(Dark Layer)</onclick>
 <!--						<onunfocus>Skin.ToggleSetting(Dark Layer)</onunfocus> -->
 						<selected>Skin.HasSetting(Dark Layer)</selected>
-						<onleft>207</onleft>
+						<onleft>150</onleft>
 						<onright>150</onright>
-						<ondown>2060</ondown>
-						<onup>5000</onup>
+						<ondown>9010</ondown>
 						<!-- Fanart viewban nem látható <visible>!Control.IsVisible(508)</visible> -->
                     </control>
-<!-- 						<control type="image">
-						<left>-370</left>
-						<top>90</top>
-						<width>180</width>
-						<height>100</height>
-						<texture border="5">mask/mask_black70.png</texture>
-						</control> -->
-					
 					<control type="radiobutton" id="150">
-						<radioposy>60</radioposy>
+						<radioposy>65</radioposy>
 						<radioposx>15</radioposx>
 						<width>35</width>
 						<height>35</height>
-						<top>105</top>
-						<left>-350</left>
-						<textoffsety>35</textoffsety>
+						<top>100</top>
+						<left>100</left>
+						<textoffsety>40</textoffsety>
 						<textoffsetx>-15</textoffsetx>
                         <description>Grey Layer</description>
                         <include>ButtonMedia</include>
                         <label>Grey Layer</label>
-						<texturenofocus colordiffuse="5FFFFFFF">icons/interface2.png</texturenofocus>
-						<texturefocus  colordiffuse="8FFFFFFF">icons/interface2.png</texturefocus>
+						<texturenofocus colordiffuse="5FFFFFFF">icons/interface.png</texturenofocus>
+						<texturefocus  colordiffuse="8FFFFFFF">icons/interface.png</texturefocus>
 						<onclick>Skin.ToggleSetting(Grey Layer)</onclick>
 <!--                         <onfocus>Skin.ToggleSetting(Grey Layer)</onfocus> -->
                         <selected>Skin.HasSetting(Grey Layer)</selected>
 						<onleft>9012</onleft>
-						<onright>151</onright>
-						<ondown>145</ondown>
-						<onup>5000</onup>
-                    </control>
-					
-<!-- 						<control type="image">
-						<left>-170</left>
-						<top>90</top>
-						<width>180</width>
-						<height>100</height>
-						<texture border="5">mask/mask_black70.png</texture>
-						</control> -->
-					
-					<control type="radiobutton" id="151">
-						<radioposy>60</radioposy>
-						<radioposx>15</radioposx>
-						<width>35</width>
-						<height>35</height>
-						<top>105</top>
-						<left>-260</left>
-						<textoffsety>35</textoffsety>
-						<textoffsetx>-15</textoffsetx>
-                        <description>blur</description>
-                        <include>ButtonMedia</include>
-                        <label>Mask Layer</label>
-
-						<texturenofocus colordiffuse="5FFFFFFF">icons/add-layer.png</texturenofocus>
-						<texturefocus  colordiffuse="8FFFFFFF">icons/add-layer.png</texturefocus>						
-						<onclick>Skin.ToggleSetting(blur)</onclick>
-<!--                         <onfocus>Skin.ToggleSetting(Grey Layer)</onfocus> -->
-                        <selected>Skin.HasSetting(blur)</selected>
-						<onleft>150</onleft>
-						<onright>207</onright>
-						<ondown>144</ondown>
-						<onup>5000</onup>
-                    </control>
-					
-<!-- 											<control type="image">
-						<left>230</left>
-						<top>90</top>
-						<width>180</width>
-						<height>100</height>
-						<texture border="5">mask/mask_black70.png</texture>
-						</control> -->
-					
-					  <control type="radiobutton" id="201">
-                        <label>31307</label>
-                        <onclick>Skin.ToggleSetting(VideoLibraryMovieFanart)</onclick>
-                        <selected>Skin.HasSetting(VideoLibraryMovieFanart)</selected>
-                        <visible>Container.Content(Movies)</visible>
-						<description>Toggle MoviesFanart</description>
-						<radioposy>60</radioposy>
-						<radioposx>15</radioposx>
-						<width>35</width>
-						<height>35</height>
-						<top>200</top>
-						<left>-550</left>
-						<textoffsety>35</textoffsety>
-						<textoffsetx>-15</textoffsetx>
-						<texturenofocus colordiffuse="5FFFFFFF">icons/picture.png</texturenofocus>
-						<texturefocus  colordiffuse="8FFFFFFF">icons/picture.png</texturefocus>
-                        <include>ButtonMedia</include>
-						<onleft>144</onleft>
-						<onright>2060</onright>
-						<ondown>143</ondown>
-						<onup>207</onup>
-                    </control>
-					
-<!-- 											<control type="image">
-						<left>430</left>
-						<top>90</top>
-						<width>180</width>
-						<height>100</height>
-						<texture border="5">mask/mask_black70.png</texture>
-						</control> -->
-					
-                    <control type="radiobutton" id="2060">
-						<radioposy>60</radioposy>
-						<radioposx>15</radioposx>
-						<width>35</width>
-						<height>35</height>
-						<top>200</top>
-						<left>-450</left>
-						<textoffsety>35</textoffsety>
-						<textoffsetx>-40</textoffsetx>
-						<texturenofocus>mask/mask_black70.png</texturenofocus>
-						<texturefocus>mask/mask_black70.png</texturefocus>
-                        <description>Toggle BlackFanart</description>
-                        <include>ButtonMedia</include>
-                        <label>41203</label>
-                        <onclick>Skin.ToggleSetting(VideoLibraryBlackFanart)</onclick>
-                        <selected>Skin.HasSetting(VideoLibraryBlackFanart)</selected>
-                        <!-- <enable>Skin.HasSetting(VideoLibraryMovieFanart)</enable> -->
-                        <visible>Container.Content(Movies)</visible>
-						<onleft>201</onleft>
-						<onright>145</onright>
-						<ondown>142</ondown>
-						<onup>9012</onup>
+						<onright>9013</onright>
+						<ondown>9010</ondown>
                     </control>
 					
 
-<!-- 						<control type="image">
-						<left>-370</left>
-						<top>210</top>
-						<width>180</width>
-						<height>100</height>
-						<texture border="5">mask/mask_black70.png</texture>
-						</control>	 -->				
-
-					<control type="radiobutton" id="145">
-                        <description>Hide Cover</description>
-                        <!-- <include>ButtonCommonValues</include> -->
-                        <label>Cover</label>
-						<!-- <textcolor>white</textcolor> -->
-                        <onclick>Skin.ToggleSetting(cover)</onclick>
-                        <selected>Skin.HasSetting(cover)</selected>
+						<control type="radiobutton" id="9013">
 						<radioposy>65</radioposy>
-						<radioposx>10</radioposx>
+						<radioposx>15</radioposx>
 						<width>35</width>
-						<height>45</height>
-						<top>200</top>
-						<left>-350</left>
-						<textoffsety>45</textoffsety>
-						<textoffsetx>0</textoffsetx>
-						<texturenofocus colordiffuse="5FFFFFFF">mask/white_layer40.png</texturenofocus>
-						<texturefocus  colordiffuse="8FFFFFFF">mask/white_layer40.png</texturefocus>
-                        <include>ButtonMedia</include>
-						<onleft>2060</onleft>
-						<onright>144</onright>
-						<ondown>141</ondown>
-						<onup>150</onup>
-                    </control>
-					
-<!-- 						<control type="image">
-						<left>-170</left>
-						<top>210</top>
-						<width>180</width>
-						<height>100</height>
-						<texture border="5">mask/mask_black70.png</texture>
-						</control>	 -->
-					
-					<control type="radiobutton" id="144">
-                        <description>Hide Fanart</description>
-                        <!-- <include>ButtonCommonValues</include> -->
-                        <label>Fanart</label>
-						<!-- <textcolor>white</textcolor> -->
-                        <onclick>Skin.ToggleSetting(fanart)</onclick>
-                        <selected>Skin.HasSetting(fanart)</selected>
-						<radioposy>60</radioposy>
-						<radioposx>20</radioposx>
-						<width>50</width>
 						<height>35</height>
 						<top>200</top>
-						<left>-270</left>
-						<textoffsety>35</textoffsety>
-						<textoffsetx>5</textoffsetx>
-						<texturenofocus colordiffuse="5FFFFFFF">mask/white_layer40.png</texturenofocus>
-						<texturefocus  colordiffuse="8FFFFFFF">mask/white_layer40.png</texturefocus>
+						<left>0</left>
+						<textoffsety>40</textoffsety>
+						<textoffsetx>-15</textoffsetx>
+                        <description>List</description>
                         <include>ButtonMedia</include>
-						<onleft>145</onleft>
-						<onright>201</onright>
-						<ondown>140</ondown>
-						<onup>151</onup>
+                        <label>List</label>
+						<texturenofocus colordiffuse="5FFFFFFF">icons/interface.png</texturenofocus>
+						<texturefocus  colordiffuse="8FFFFFFF">icons/interface.png</texturefocus>
+						<onclick>Skin.ToggleSetting(list)</onclick>
+<!--                         <onfocus>Skin.ToggleSetting(Grey Layer)</onfocus> -->
+						<!-- <visible>Control.IsVisible(150)</visible> -->
+                        <selected>Skin.HasSetting(list)</selected>
+						<onleft>9012</onleft>
+						<onright>9014</onright>
+						<ondown>9010</ondown>
                     </control>
-					
-<!-- 						<control type="image">
-						<left>30</left>
-						<top>210</top>
-						<width>180</width>
-						<height>100</height>
-						<texture border="5">mask/mask_black70.png</texture>
-						</control>	 -->
-					
-					<control type="radiobutton" id="143">
-                        <description>Hide landscape</description>
-                        <!-- <include>ButtonCommonValues</include> -->
-                        <label>Landscape</label>
-						<!-- <textcolor>white</textcolor> -->
-                        <onclick>Skin.ToggleSetting(landscape)</onclick>
-                        <selected>Skin.HasSetting(landscape)</selected>
-						<radioposy>60</radioposy>
-						<radioposx>20</radioposx>
-						<width>50</width>
-						<height>35</height>
-						<top>300</top>
-						<left>-550</left>
-						<textoffsety>35</textoffsety>
-						<textoffsetx>-10</textoffsetx>
-						<texturenofocus colordiffuse="5FFFFFFF">mask/white_layer10.png</texturenofocus>
-						<texturefocus  colordiffuse="8FFFFFFF">mask/white_layer10.png</texturefocus>
-                        <include>ButtonMedia</include>
-						<onleft>140</onleft>
-						<onright>142</onright>
-						<ondown>2000</ondown>
-						<onup>201</onup>
-                    </control>
-					
-<!-- 						<control type="image">
-						<left>230</left>
-						<top>210</top>
-						<width>180</width>
-						<height>100</height>
-						<texture border="5">mask/mask_black70.png</texture>
-						</control>	 -->
-					
-					<control type="radiobutton" id="142">
-                        <description>Hide logo</description>
-                        <!-- <include>ButtonCommonValues</include> -->
-                        <label>Logo</label>
-						<!-- <textcolor>white</textcolor> -->
-                        <onclick>Skin.ToggleSetting(logo)</onclick>
-                        <selected>Skin.HasSetting(logo)</selected>
-						<radioposy>50</radioposy>
-						<radioposx>20</radioposx>
-						<width>50</width>
-						<height>15</height>
-						<top>310</top>
-						<left>-450</left>
-						<textoffsety>25</textoffsety>
-						<textoffsetx>10</textoffsetx>
-						<texturenofocus colordiffuse="5FFFFFFF">mask/white_layer40.png</texturenofocus>
-						<texturefocus  colordiffuse="8FFFFFFF">mask/white_layer40.png</texturefocus>
-                        <include>ButtonMedia</include>
-						<onleft>143</onleft>
-						<onright>141</onright>
-						<ondown>149</ondown>
-						<onup>2060</onup>
-                    </control>
-					
-<!-- 						<control type="image">
-						<left>430</left>
-						<top>210</top>
-						<width>180</width>
-						<height>100</height>
-						<texture border="5">mask/mask_black70.png</texture>
-						</control>	 -->
-					
-					<control type="radiobutton" id="141">
-                        <description>Hide clearart</description>
-                        <!-- <include>ButtonCommonValues</include> -->
-                        <label>ClearArt</label>
-						<!-- <textcolor>white</textcolor> -->
-                        <onclick>Skin.ToggleSetting(clearart)</onclick>
-                        <selected>Skin.HasSetting(clearart)</selected>
-						<radioposy>60</radioposy>
-						<radioposx>15</radioposx>
-						<width>35</width>
-						<height>35</height>
-						<top>300</top>
-						<left>-350</left>
-						<textoffsety>35</textoffsety>
-						<textoffsetx>-10</textoffsetx>
-						<texturenofocus colordiffuse="5FFFFFFF">mask/white_layer40.png</texturenofocus>
-						<texturefocus  colordiffuse="8FFFFFFF">mask/white_layer40.png</texturefocus>
-                        <include>ButtonMedia</include>
-						<onleft>142</onleft>
-						<onright>140</onright>
-						<ondown>149</ondown>
-						<onup>145</onup>
-                    </control>
-					
-<!-- 						<control type="image">
-						<left>430</left>
-						<top>330</top>
-						<width>180</width>
-						<height>100</height>
-						<texture border="5">mask/mask_black70.png</texture>
-						</control>	 -->
-					
-					<control type="radiobutton" id="140">
-                        <description>lower</description>
-                        <!-- <include>ButtonCommonValues</include> -->
-                        <label>Up - Down</label>
-						<!-- <textcolor>white</textcolor> -->
-                        <onclick>Skin.ToggleSetting(lower)</onclick>
-                        <selected>Skin.HasSetting(lower)</selected>
-						<radioposy>60</radioposy>
-						<radioposx>15</radioposx>
-						<width>35</width>
-						<height>35</height>
-						<top>300</top>
-						<left>-250</left>
-						<textoffsety>35</textoffsety>
-						<textoffsetx>-40</textoffsetx>
-						<texturenofocus colordiffuse="5FFFFFFF">icons/exchange.png</texturenofocus>
-						<texturefocus  colordiffuse="8FFFFFFF">icons/exchange.png</texturefocus>
-                        <include>ButtonMedia</include>
-						<onleft>141</onleft>
-						<onright>143</onright>
-						<ondown>149</ondown>
-						<onup>144</onup>
-                    </control>
-					
-					
-<!-- 						<control type="image">
-						<left>230</left>
-						<top>330</top>
-						<width>180</width>
-						<height>100</height>
-						<texture border="5">mask/mask_black70.png</texture>
-						</control> -->
-					
-						<control type="radiobutton" id="2000">
-                        <description>plotoutline</description>
-                        <!-- <include>ButtonCommonValues</include> -->
-                        <label>Plot</label>
-						<!-- <textcolor>white</textcolor> -->
-                        <onfocus>Skin.ToggleSetting(plotoutline)</onfocus>
-                        <selected>Skin.HasSetting(plotoutline)</selected>
-						<radioposy>60</radioposy>
-						<radioposx>15</radioposx>
-						<width>35</width>
-						<height>35</height>
-						<top>400</top>
-						<left>-550</left>
-						<textoffsety>35</textoffsety>
-						<textoffsetx>5</textoffsetx>
-						<texturenofocus colordiffuse="5FFFFFFF">-</texturenofocus>
-						<texturefocus  colordiffuse="8FFFFFFF">-</texturefocus>
-                        <include>ButtonMedia</include>
-						<onleft>149</onleft>
-						<onright>149</onright>
-						<ondown></ondown>
-						<onup>143</onup>					
-					
-				</control>
-					
-<!-- 						<control type="image">
-						<left>-550</left>
-						<top>220</top>
-						<width>140</width>
-						<height>50</height>
-						<texture border="5">mask/mask_black70.png</texture>
-						</control> -->
-
-					<control type="radiobutton" id="149">
-						<radioposy>0</radioposy>
-						<radioposx>150</radioposx>
-						<left>-480</left>
-						<top>435</top>
-						<texturenofocus colordiffuse="5FFFFFFF">-</texturenofocus>
-						<texturefocus  colordiffuse="8FFFFFFF">-</texturefocus>
-                        <description>selected-</description>
-                        <include>ButtonMedia</include>
-                        <label>Focused text light</label>
-						<!-- <textcolor>white</textcolor> -->
-                        <onclick>Skin.ToggleSetting(selected-)</onclick>
-                        <selected>Skin.HasSetting(selected-)</selected>
-						<onleft>2000</onleft>
-						<onright>146</onright>
-						<ondown>148</ondown>
-						<onup>142</onup>
-                    </control>
-					
-					<control type="radiobutton" id="146">
-						<radioposy>0</radioposy>
-						<radioposx>150</radioposx>
-						<left>-450</left>
-						<top>435</top>
-                        <description>selected--</description>
-                        <include>ButtonMedia</include>
-                        <label></label>
-						<!-- <textcolor>white</textcolor> -->
-                        <onclick>Skin.ToggleSetting(selected--)</onclick>
-                        <selected>Skin.HasSetting(selected--)</selected>
-						<texturenofocus colordiffuse="5FFFFFFF">-</texturenofocus>
-						<texturefocus  colordiffuse="8FFFFFFF">-</texturefocus>
-						<onleft>149</onleft>
-						<onright>2000</onright>
-						<ondown>148</ondown>
-						<onup>142</onup>
-                    </control>
-					
-<!-- 						<control type="image">
-						<left>-550</left>
-						<top>280</top>
-						<width>140</width>
-						<height>50</height>
-						<texture border="5">mask/mask_black70.png</texture>
-						</control> -->
-					
-					<control type="radiobutton" id="148">
-						<radioposy>0</radioposy>
-						<radioposx>150</radioposx>
-						<left>-480</left>
-						<top>465</top>
-						<texturenofocus colordiffuse="5FFFFFFF">-</texturenofocus>
-						<texturefocus  colordiffuse="8FFFFFFF">-</texturefocus>
-                        <description>font-</description>
-                        <include>ButtonMedia</include>
-                        <label>UnFocused text light</label>
-						<!-- <textcolor>white</textcolor> -->
-                        <onclick>Skin.ToggleSetting(font-)</onclick>
-                        <selected>Skin.HasSetting(font-)</selected>
-						<onleft>147</onleft>
-						<onright>147</onright>
-						<ondown></ondown>
-						<onup>149</onup>
-                    </control>
-					<control type="radiobutton" id="147">
-						<radioposy>0</radioposy>
-						<radioposx>150</radioposx>
-						<left>-450</left>
-						<top>465</top>
-						<texturenofocus colordiffuse="5FFFFFFF">-</texturenofocus>
-						<texturefocus  colordiffuse="8FFFFFFF">-</texturefocus>
-                        <description>font--</description>
-                        <include>ButtonMedia</include>
-                        <label></label>
-						<!-- <textcolor>white</textcolor> -->
-                        <onclick>Skin.ToggleSetting(font--)</onclick>
-                        <selected>Skin.HasSetting(font--)</selected>
-						<onleft>148</onleft>
-						<onright>2000</onright>
-						<ondown></ondown>
-						<onup>149</onup>
-                    </control>	
-
-                   
 
  </control>
- 
- 
- <!-- Customize Fanart view -->
- <control type="group" id="5001">
- 	<visible>Skin.HasSetting(Customize)</visible>
-				 
-		<control type="group" id="3001">		 
-			<!-- <visible>Skin.HasSetting(background)</visible>	  -->
-				 
- 					<control type="button" id="3000">
-						<radioposy>0</radioposy>
-						<radioposx>150</radioposx>
-						<left>-450</left>
-						<top>165</top>
-						<texturenofocus colordiffuse="5FFFFFFF">mask/white_layer40</texturenofocus>
-						<texturefocus  colordiffuse="8FFFFFFF">mask/white_layer40</texturefocus>
-                        <description>Background</description>
-                        <include>ButtonMedia</include>
-                        <label>Background</label>
-						<!-- <textcolor>white</textcolor> -->
-                        <onclick>Skin.ToggleSetting(background)</onclick>
-                        <selected>Skin.HasSetting(background)</selected>
-						<onleft>148</onleft>
-						<onright>2000</onright>
-						<ondown>3003</ondown>
-						<onup>149</onup>
-						<!-- <visible>Skin.HasSetting(background)</visible> -->
-						<!-- <animation effect="fade" start="0" end="100" time="200" tween="sine" easing="inout" condition="!Skin.HasSetting(font)">Conditional</animation> -->
-                    </control></control>	
-					
-					<control type="group" id="5002">
-					<control type="button" id="3003">  
-						<!-- <animation effect="fade" start="0" end="100" time="200" tween="sine" easing="inout" condition="!Skin.HasSetting(background)">Conditional</animation> -->
-						<radioposy>0</radioposy>
-						<radioposx>150</radioposx>
-						<left>-450</left>
-						<top>265</top>
-						<texturenofocus colordiffuse="5FFFFFFF">mask/white_layer40</texturenofocus>
-						<texturefocus  colordiffuse="8FFFFFFF">mask/white_layer40</texturefocus>
-                        <description>font</description>
-                        <include>ButtonMedia</include>
-                        <label>font</label>
-						<!-- <textcolor>white</textcolor> -->
-                        <onclick>Skin.ToggleSetting(font)</onclick>
-                        <selected>Skin.HasSetting(font)</selected>
-						<onleft>148</onleft>
-						<onright>2000</onright>
-						<ondown></ondown>
-						<onup>3000</onup>
-                    </control>	
-					
-			 </control>		
-				
-			<control type="group" id="4001">		 
-			<visible>Skin.HasSetting(background)</visible>					
-					
-					
-				
-
-				<!-- <visible>Skin.HasSetting(Customize)</visible> -->
-					<control type="button" id="3002">
-					 <!-- <visible>Skin.HasSetting(background)</visible> -->
-						<radioposy>0</radioposy>
-						<radioposx>150</radioposx>
-						<left>-450</left>
-						<top>235</top>
-						<texturenofocus colordiffuse="5FFFFFFF">mask/white_layer40</texturenofocus>
-						<texturefocus  colordiffuse="8FFFFFFF">mask/white_layer40</texturefocus>
-                        <description>cover</description>
-                        <include>ButtonMedia</include>
-                        <label>cover</label>
-						<!-- <textcolor>white</textcolor> -->
-                        <onclick>Skin.ToggleSetting(cover)</onclick>
-                        <selected>Skin.HasSetting(cover)</selected>
-						<onleft>148</onleft>
-						<onright>2000</onright>
-						<ondown>3100</ondown>
-						<onup>149</onup>
-                    </control>
-					
-										<control type="button" id="3002">
-					 <!-- <visible>Skin.HasSetting(background)</visible> -->
-						<radioposy>0</radioposy>
-						<radioposx>150</radioposx>
-						<left>-450</left>
-						<top>265</top>
-						<texturenofocus colordiffuse="5FFFFFFF">mask/white_layer40</texturenofocus>
-						<texturefocus  colordiffuse="8FFFFFFF">mask/white_layer40</texturefocus>
-                        <description>fanart</description>
-                        <include>ButtonMedia</include>
-                        <label>fanart</label>
-						<!-- <textcolor>white</textcolor> -->
-                        <onclick>Skin.ToggleSetting(fanart)</onclick>
-                        <selected>Skin.HasSetting(fanart)</selected>
-						<onleft>148</onleft>
-						<onright>2000</onright>
-						<ondown>3100</ondown>
-						<onup>149</onup>
-                    </control>
-				
-
-			</control>					
-				
-
-
-					
-			
-</control> 
 				 
             </control>
         </control>

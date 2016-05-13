@@ -56,10 +56,10 @@
         <overlaytexture>-</overlaytexture>
     </default>
     <default type="spincontrol">
-        <textureup>scrollupNF.png</textureup>
-        <texturedown>scrolldownNF.png</texturedown>
-        <textureupfocus>scrollup.png</textureupfocus>
-        <texturedownfocus>scrolldown.png</texturedownfocus>
+        <textureup>scrollup.png</textureup>
+        <texturedown>scrolldown.png</texturedown>
+        <textureupfocus>scrollupNF.pngscrollup.png</textureupfocus>
+        <texturedownfocus>scrolldownNF.png</texturedownfocus>
         <align>right</align>
         <font>font13</font>
         <reverse>yes</reverse>

@@ -213,6 +213,7 @@
                 <visible>Container.Content(Movies)</visible>
                 <visible>Skin.HasSetting(noMPAAStudioFlags)</visible>
                 <visible>!Skin.HasSetting(newMPAAFlags)</visible>
+				<visible>!Skin.HasSetting(logo)</visible>
             </control>
             <control type="image">
                 <description>Movie Logo</description>
