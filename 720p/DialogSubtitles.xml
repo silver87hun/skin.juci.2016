@@ -3,22 +3,24 @@
     <coordinates>
         <system>1</system>
         <left>0</left>
-        <top>0</top>
+        <top>600</top>
     </coordinates>
     <controls>
+
         <control type="group">
             <control type="group" id="250">
                 <animation type="Conditional" condition="Control.HasFocus(150) | Control.HasFocus(160)" reversible="true">
                     <effect type="slide" end="-60,0" time="400" />
                 </animation>
-                <control type="image">
+			<animation effect="slide" start="0,0" end="0,-400" time="600" tween="quadratic" easing="out">WindowOpen</animation>
+<!--                 <control type="image">
                     <description>Panel</description>
                     <left>200</left>
                     <top>120</top>
                     <width>881</width>
                     <height>501</height>
                     <texture>ContentPanel.png</texture>
-                </control>
+                </control> -->
                 <control type="image" id="110">
                     <description>Service Logo</description>
                     <left>280</left>

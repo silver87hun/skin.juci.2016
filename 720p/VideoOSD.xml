@@ -2,6 +2,208 @@
 <window>
     <defaultcontrol always="true">100</defaultcontrol>
     <controls>
+			<control type="image">
+            <left>0</left>
+            <top>0</top>
+            <width>1280</width>
+            <height>900</height>
+            <aspectratio>stretch</aspectratio>
+            <texture>mask/mask_black20.png</texture>
+        </control>
+        <control type="group">
+		<top>560</top>
+<!-- seekbar		 -->
+	<control type="image">
+            <left>0</left>
+            <top>-400</top>
+            <width>1280</width>
+            <height>700</height>
+            <aspectratio>stretch</aspectratio>
+            <texture>shade/fadeOutBottom.png</texture>
+        </control>
+		        <control type="image">
+            <left>0</left>
+            <top>-400</top>
+            <width>1280</width>
+            <height>700</height>
+            <aspectratio>stretch</aspectratio>
+            <texture>shade/fadeOutBottom.png</texture>
+        </control>
+		        <control type="image">
+            <left>0</left>
+            <top>-400</top>
+            <width>1280</width>
+            <height>700</height>
+            <aspectratio>stretch</aspectratio>
+            <texture>shade/fadeOutBottom.png</texture>
+        </control>
+		
+				        <control type="image">
+            <left>0</left>
+            <top>-800</top>
+            <width>1280</width>
+            <height>700</height>
+            <aspectratio>stretch</aspectratio>
+            <texture>shade/fadeOutUp.png</texture>
+        </control>
+		
+		<control type="group">
+		<top>0</top>
+			<animation effect="slide" start="0,120" end="0,0" time="600" tween="quadratic" easing="out">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="0,120" time="600" tween="quadratic" easing="out">WindowClose</animation>
+			<animation effect="slide" start="0,0" end="0,-40" time="300" tween="quadratic" easing="out" condition="Control.HasFocus(703) | ControlGroup(800).HasFocus">Conditional</animation>
+			<animation effect="slide" start="0,0" end="0,-400" time="600" tween="quadratic" easing="out" condition="Window.IsVisible(SubtitleSearch)">Conditional</animation>
+			<!-- <animation effect="slide" start="0,0" end="0,40" time="300" tween="quadratic" easing="out" condition="Control.HasFocus(703) | ControlGroup(800).HasFocus">Conditional</animation> -->
+			 		<control type="image">
+            <left>0</left>
+            <top>100</top>
+            <width>1280</width>
+            <height>720</height>
+            <aspectratio>stretch</aspectratio>
+            <texture>special://skin/backgrounds/blackbackground.jpg</texture>
+        </control>
+		
+		
+					        <control type="multiimage">
+            <visible>!Skin.HasSetting(Menu_RandomCustom1)</visible>
+            <left>0</left>
+            <top>100</top>
+            <width>1280</width>
+            <height>720</height>
+            <imagepath background="true">layer</imagepath>
+            <timeperimage>80000</timeperimage>
+            <randomize>true</randomize>
+            <fadetime>500</fadetime>
+
+        </control>
+
+			<control type="image">
+            <left>0</left>
+            <top>100</top>
+            <width>1280</width>
+            <height>720</height>
+            <aspectratio>stretch</aspectratio>
+            <texture>mask/mask_black50.png</texture>
+        </control>
+		<control type="image">
+			<animation effect="slide" start="0,0" end="0,-600" time="600" tween="quadratic" easing="out" condition="Window.IsVisible(SubtitleSearch)">Conditional</animation>		
+            <left>0</left>
+            <top>800</top>
+            <width>1280</width>
+            <height>720</height>
+            <aspectratio>stretch</aspectratio>
+            <texture>mask/mask_black50.png</texture>
+        </control>
+		</control>
+		
+		<control type="group">
+						<animation effect="zoom" start="100,100" end="80,80" center="auto" time="600" tween="quadratic" easing="out">WindowOpen</animation>				
+				<animation effect="zoom" start="80,80" end="100,100" center="auto" time="600" tween="quadratic" easing="out">WindowClose</animation>
+							<animation effect="slide" start="0,0" end="0,-50" time="300" tween="quadratic" easing="out" condition="Control.HasFocus(703) | ControlGroup(800).HasFocus">Conditional</animation>
+							<animation effect="slide" start="0,0" end="0,-400" time="600" tween="quadratic" easing="out" condition="Window.IsVisible(SubtitleSearch)">Conditional</animation>
+		<!-- <animation effect="slide" start="0,120" end="0,0" time="300" delay="600" tween="quadratic" easing="out">WindowOpen</animation> -->
+<!-- 		<animation effect="slide" start="0,20" end="0,0" time="500" delay="350" tween="quadratic" easing="out">WindowOpen</animation>
+        <animation effect="fade" start="0" end="100" center="auto" time="1500" tween="quadratic" easing="out">WindowOpen</animation> -->
+		<!-- finish time duration -->
+		<top>80</top>
+        <control type="label">
+		<animation effect="slide" start="0,0" end="920,20" time="600" tween="quadratic" easing="out">WindowOpen</animation>
+		<animation effect="slide" start="920,20" end="0,0" time="600" tween="quadratic" easing="out">WindowClose</animation>
+            <left>-210</left>
+            <top>22</top>
+            <width>380</width>
+            <height>20</height>
+            <label>$INFO[VideoPlayer.Time]</label>
+            <scroll>true</scroll>
+            <align>right</align>
+            <aligny>center</aligny>
+            <font>font13</font>
+            <textcolor>5FFFFFFF</textcolor>
+        </control>
+		
+		<control type="label">
+		<animation effect="slide" start="0,0" end="250,20" time="600" tween="quadratic" easing="out">WindowOpen</animation>
+		<animation effect="slide" start="250,20" end="0,0" time="600" tween="quadratic" easing="out">WindowClose</animation>
+            <left>1090</left>
+            <top>22</top>
+            <width>380</width>
+            <height>20</height>
+            <label>$INFO[VideoPlayer.Duration]</label>
+            <scroll>true</scroll>
+            <align>left</align>
+            <aligny>center</aligny>
+            <font>font13</font>
+            <textcolor>5FFFFFFF</textcolor>
+        </control>
+		</control>
+		<control type="group">
+		<animation effect="slide" start="0,0" end="470,16" time="600" tween="quadratic" easing="out">WindowOpen</animation>
+		<animation effect="slide" start="470,16" end="0,0" time="600" tween="quadratic" easing="out">WindowClose</animation>
+		        <control type="progress">
+				<animation effect="zoom" start="100,100" end="20,100" center="auto" time="600" tween="quadratic" easing="out">WindowOpen</animation>				
+				<animation effect="zoom" start="20,100" end="100,100" center="auto" time="600" tween="quadratic" easing="out">WindowClose</animation>
+							<animation effect="slide" start="0,0" end="0,-40" time="300" tween="quadratic" easing="out" condition="Control.HasFocus(703) | ControlGroup(800).HasFocus">Conditional</animation>
+							<animation effect="slide" start="0,0" end="0,-400" time="600" tween="quadratic" easing="out" condition="Window.IsVisible(SubtitleSearch)">Conditional</animation>
+<!-- 		<animation effect="slide" start="0,20" end="0,0" time="500" delay="350" tween="quadratic" easing="out">WindowOpen</animation>
+        <animation effect="fade" start="0" end="100" center="auto" time="1500" tween="quadratic" easing="out">WindowOpen</animation> -->
+		<!-- <animation effect="slide" start="0,120" end="0,0" time="300" delay="600" tween="quadratic" easing="out">WindowOpen</animation> -->
+            <description>Progressbar</description>
+            <left>180</left>
+            <top>112</top>
+            <width>900</width>
+            <height>5</height>
+            <info>Player.Progress</info>
+			<colordiffuse>white</colordiffuse>
+        </control>
+        <control type="slider" id="401">
+<!-- 		<animation effect="slide" start="0,20" end="0,0" time="500" delay="200" tween="quadratic" easing="out">WindowOpen</animation>
+        <animation effect="fade" start="0" end="100" center="auto" time="1500" tween="quadratic" easing="out">WindowOpen</animation> -->
+		<!-- <animation effect="slide" start="0,120" end="0,0" time="300" delay="600" tween="quadratic" easing="out">WindowOpen</animation> -->
+            <description>Seek Slider</description>
+            <left>180</left>
+            <top>50</top>
+            <width>900</width>
+            <height>6</height>
+            <action>seek</action>
+            <ondown>602</ondown>
+            <onup>602</onup>
+            <texturesliderbar>seekslider.png</texturesliderbar>
+			<colordiffuse>white</colordiffuse>
+        </control>
+		</control>
+		 
+        </control>		 
+
+		 
+
+		
+<!-- 		<control type="label">
+		<animation effect="slide" start="0,120" end="0,0" time="300" delay="100" tween="quadratic" easing="out">WindowOpen</animation>
+		<animation effect="slide" start="0,0" end="0,120" time="300" tween="quadratic" easing="out">WindowClose</animation>
+            <left>403</left>
+            <top>680</top>
+            <width>460</width>
+            <height>25</height>
+            <label>[COLOR=5FFFFFFF]$LOCALIZE[31049][/COLOR] $INFO[Player.FinishTime]</label>
+            <scroll>true</scroll>
+            <align>right</align>
+            <aligny>center</aligny>
+            <font>font13</font>
+            <textcolor>5FFFFFFF</textcolor>
+        </control>
+	 -->
+<!-- 		<control type="image">
+		<animation effect="slide" start="0,120" end="0,0" time="300" delay="100" tween="quadratic" easing="out">WindowOpen</animation>
+		<animation effect="slide" start="0,0" end="0,120" time="300" tween="quadratic" easing="out">WindowClose</animation>
+            <left>620</left>
+            <top>700</top>
+            <width>20</width>
+            <height>20</height>
+            <aspectratio>stretch</aspectratio>
+            <texture>icons/line_single2.png</texture>
+			<colordiffuse>8FFFFFFF</colordiffuse>
+        </control> -->
+	
         <control type="group">
             <control type="button" id="899">
                 <description>Fake button for mouse control</description>
@@ -15,28 +217,33 @@
                 <texturefocus>-</texturefocus>
                 <visible>true</visible>
             </control>
-            <animation effect="slide" start="0,-145" end="0,0" time="300" delay="300" tween="quadratic" easing="out">WindowOpen</animation>
-            <animation effect="slide" start="0,0" end="0,-145" time="300" delay="300" tween="quadratic" easing="out">WindowClose</animation>
+            <animation effect="slide" start="0,120" end="0,0" time="300" delay="200" tween="quadratic" easing="out">WindowOpen</animation>
+            <animation effect="slide" start="0,0" end="0,120" time="300" tween="quadratic" easing="out">WindowClose</animation>
             <animation effect="slide" start="0,0" end="0,-145" time="300" delay="150" tween="quadratic" easing="out" condition="Window.IsVisible(SliderDialog) | Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(PVROSDGuide) | Window.IsVisible(OSDAudioDSPSettings)">Conditional</animation>
+			
+			<animation effect="slide" start="0,0" end="0,-40" time="300" tween="quadratic" easing="out" condition="Control.HasFocus(703) | ControlGroup(800).HasFocus">Conditional</animation>			
+			<animation effect="slide" start="0,0" end="0,-400" time="600" tween="quadratic" easing="out" condition="Window.IsVisible(SubtitleSearch)">Conditional</animation>
+			
+			
+
             <control type="group">
-                <control type="image">
+<!--                 <control type="image">
                     <animation effect="slide" start="0,0" end="0,40" time="300" tween="quadratic" easing="out" condition="Control.HasFocus(703) | ControlGroup(800).HasFocus">Conditional</animation>
-                    <!-- background -->
                     <left>0</left>
                     <top>-40</top>
                     <width>1280</width>
                     <height>140</height>
                     <aspectratio>stretch</aspectratio>
                     <texture flipy="true">OSDbackground.png</texture>
-                </control>
+                </control> -->
                 <control type="group" id="200">
                     <left>720</left>
-                    <top>20</top>
+                    <top>682</top>
                     <control type="button" id="700">
                         <left>0</left>
                         <top>0</top>
-                        <width>40</width>
-                        <height>28</height>
+                        <width>20</width>
+                        <height>14</height>
                         <label>298</label>
                         <font>-</font>
                         <texturefocus>OSDBookMarksFO.png</texturefocus>
@@ -49,8 +256,8 @@
                     <control type="button" id="701">
                         <left>50</left>
                         <top>0</top>
-                        <width>40</width>
-                        <height>28</height>
+                        <width>20</width>
+                        <height>14</height>
                         <label>13396</label>
                         <font>-</font>
                         <texturefocus>OSDAudioFO.png</texturefocus>
@@ -63,8 +270,8 @@
                     <control type="button" id="702">
                         <left>100</left>
                         <top>0</top>
-                        <width>40</width>
-                        <height>28</height>
+                        <width>20</width>
+                        <height>14</height>
                         <label>13395</label>
                         <font>-</font>
                         <texturefocus>OSDVideoFO.png</texturefocus>
@@ -77,8 +284,8 @@
                     <control type="button" id="703">
                         <left>150</left>
                         <top>0</top>
-                        <width>40</width>
-                        <height>28</height>
+                        <width>20</width>
+                        <height>14</height>
                         <label>24012</label>
                         <font>-</font>
                         <texturefocus>OSDSubtitlesFO.png</texturefocus>
@@ -86,14 +293,14 @@
                         <onleft>702</onleft>
                         <onright>704</onright>
                         <ondown>802</ondown>
-                        <onclick>Dialog.Close(VideoOSD)</onclick>
+                        <!-- <onclick>Dialog.Close(VideoOSD)</onclick> -->
                         <onclick>ActivateWindow(SubtitleSearch)</onclick>
                     </control>
                     <control type="button" id="704">
                         <left>250</left>
                         <top>-5</top>
-                        <width>40</width>
-                        <height>40</height>
+                        <width>20</width>
+                        <height>20</height>
                         <label>264</label>
                         <font>-</font>
                         <texturefocus>OSDRecord2.png</texturefocus>
@@ -109,8 +316,8 @@
                     <control type="button" id="704">
                         <left>250</left>
                         <top>-5</top>
-                        <width>40</width>
-                        <height>40</height>
+                        <width>20</width>
+                        <height>20</height>
                         <label>19043</label>
                         <font>-</font>
                         <textcolor>accent</textcolor>
@@ -127,8 +334,8 @@
                     <control type="button" id="705">
                         <left>300</left>
                         <top>-5</top>
-                        <width>40</width>
-                        <height>40</height>
+                        <width>20</width>
+                        <height>20</height>
                         <label>41152</label>
                         <font>-</font>
                         <texturefocus>OSDChannelListFO.png</texturefocus>
@@ -143,8 +350,8 @@
                     <control type="button" id="706">
                         <left>350</left>
                         <top>-5</top>
-                        <width>40</width>
-                        <height>40</height>
+                        <width>20</width>
+                        <height>20</height>
                         <label>$LOCALIZE[19029]$INFO[VideoPlayer.ChannelName, - ]</label>
                         <font>-</font>
                         <texturefocus>OSDepgFO.png</texturefocus>
@@ -158,8 +365,8 @@
                     <control type="button" id="707">
                         <left>400</left>
                         <top>-5</top>
-                        <width>40</width>
-                        <height>40</height>
+                        <width>20</width>
+                        <height>20</height>
                         <label>41153</label>
                         <font>-</font>
                         <texturefocus>OSDTeleTextFO.png</texturefocus>
@@ -174,12 +381,12 @@
                 <!-- GROUP FOR PLAYER CONTROLS -->
                 <control type="group" id="100">
                     <left>370</left>
-                    <top>20</top>
+                    <top>682</top>
                     <control type="button" id="600">
                         <left>0</left>
                         <top>0</top>
-                        <width>40</width>
-                        <height>28</height>
+                        <width>20</width>
+                        <height>14</height>
                         <label>210</label>
                         <font>-</font>
                         <texturefocus>OSDPrevTrackFO.png</texturefocus>
@@ -192,8 +399,8 @@
                     <control type="button" id="601">
                         <left>50</left>
                         <top>0</top>
-                        <width>40</width>
-                        <height>28</height>
+                        <width>20</width>
+                        <height>14</height>
                         <label>31354</label>
                         <font>-</font>
                         <texturefocus>OSDRewindFO.png</texturefocus>
@@ -206,8 +413,8 @@
                     <control type="togglebutton" id="602">
                         <left>100</left>
                         <top>0</top>
-                        <width>40</width>
-                        <height>28</height>
+                        <width>20</width>
+                        <height>14</height>
                         <label>31351</label>
                         <altlabel>208</altlabel>
                         <font>-</font>
@@ -226,8 +433,8 @@
                     <control type="button" id="603">
                         <left>150</left>
                         <top>0</top>
-                        <width>40</width>
-                        <height>28</height>
+                        <width>20</width>
+                        <height>14</height>
                         <label>31352</label>
                         <font>-</font>
                         <texturefocus>OSDStopFO.png</texturefocus>
@@ -240,8 +447,8 @@
                     <control type="button" id="604">
                         <left>200</left>
                         <top>0</top>
-                        <width>40</width>
-                        <height>28</height>
+                        <width>20</width>
+                        <height>14</height>
                         <label>31353</label>
                         <font>-</font>
                         <texturefocus>OSDForwardFO.png</texturefocus>
@@ -254,8 +461,8 @@
                     <control type="button" id="605">
                         <left>250</left>
                         <top>0</top>
-                        <width>40</width>
-                        <height>28</height>
+                        <width>20</width>
+                        <height>14</height>
                         <label>209</label>
                         <font>-</font>
                         <texturefocus>OSDNextTrackFO.png</texturefocus>
@@ -268,8 +475,8 @@
                     <control type="button" id="606">
                         <left>300</left>
                         <top>0</top>
-                        <width>40</width>
-                        <height>28</height>
+                        <width>20</width>
+                        <height>14</height>
                         <label>31355</label>
                         <font>-</font>
                         <texturefocus>OSDDvdFO.png</texturefocus>
@@ -281,7 +488,7 @@
                         <enable>VideoPlayer.HasMenu</enable>
                         <animation effect="fade" start="100" end="50" time="100" condition="!VideoPlayer.HasMenu">Conditional</animation>
                     </control>
-                    <control type="image" id="11">
+<!--                     <control type="image" id="11">
                         <description>separator image</description>
                         <left>-400</left>
                         <top>40</top>
@@ -289,9 +496,9 @@
                         <height>1</height>
                         <colordiffuse>66FFFFFF</colordiffuse>
                         <texture>separator2.png</texture>
-                    </control>
+                    </control> -->
                 </control>
-                <control type="label">
+<!--                 <control type="label">
                     <left>20</left>
                     <top>68</top>
                     <width>300</width>
@@ -303,8 +510,8 @@
                     <font>cirrus_20</font>
                     <textcolor>accent</textcolor>
                     <shadowcolor>black</shadowcolor>
-                </control>
-                <control type="label">
+                </control> -->
+<!--                 <control type="label">
                     <left>800</left>
                     <top>68</top>
                     <width>460</width>
@@ -316,24 +523,26 @@
                     <font>cirrus_20</font>
                     <textcolor>grey</textcolor>
                     <shadowcolor>black</shadowcolor>
-                </control>
+                </control> -->
             </control>
             <control type="group">
-                <animation effect="slide" start="0,0" end="0,40" time="300" tween="quadratic" easing="out" condition="Control.HasFocus(703) | ControlGroup(800).HasFocus">Conditional</animation>
+                <!-- <animation effect="slide" start="0,0" end="0,40" time="300" tween="quadratic" easing="out" condition="Control.HasFocus(703) | ControlGroup(800).HasFocus">Conditional</animation> -->
                 <control type="label">
-                    <left>450</left>
-                    <top>62</top>
+				<animation effect="slide" start="0,120" end="0,0" time="300" delay="200" tween="quadratic" easing="out">WindowOpen</animation>
+            <animation effect="slide" start="0,0" end="0,120" time="300" tween="quadratic" easing="out">WindowClose</animation>
+                    <left>10</left>
+                    <top>680</top>
                     <width>380</width>
                     <height>20</height>
                     <label>$INFO[System.CurrentControl]</label>
                     <scroll>true</scroll>
-                    <align>center</align>
+                    <align>left</align>
                     <aligny>center</aligny>
-                    <font>cirrus_18</font>
-                    <textcolor>grey</textcolor>
-                    <shadowcolor>black</shadowcolor>
+                    <font>FontSize_30</font>
+                    <textcolor>5FFFFFFF</textcolor>
+                    <!-- <shadowcolor>black</shadowcolor> -->
                 </control>
-                <control type="progress">
+<!--                 <control type="progress">
                     <description>Progressbar</description>
                     <left>440</left>
                     <top>82</top>
@@ -353,10 +562,10 @@
                     <texturesliderbar>seekslider.png</texturesliderbar>
                     <textureslidernib>osd_seeknf.png</textureslidernib>
                     <textureslidernibfocus>osd_seek.png</textureslidernibfocus>
-                </control>
+                </control> -->
             </control>
             <control type="group">
-                <control type="image" id="801">
+                <!-- <control type="image" id="801">
                     <animation effect="fade" time="50" delay="150">Visible</animation>
                     <animation effect="fade" start="100" end="0" time="50">Hidden</animation>
                     <visible>Control.HasFocus(703) | ControlGroup(800).HasFocus</visible>
@@ -367,12 +576,14 @@
                     <height>1</height>
                     <colordiffuse>66FFFFFF</colordiffuse>
                     <texture>separator2.png</texture>
-                </control>
+                </control> -->
                 <control type="grouplist" id="800">
                     <description>subtitles options</description>
-                    <animation effect="fade" time="50" delay="150">VisibleChange</animation>
+                    <animation effect="slide" start="0,120" end="0,0" time="600" delay="0" tween="quadratic" easing="out">VisibleChange</animation>
+<!-- 					<animation effect="slide" start="0,120" end="0,0" time="300" delay="200" tween="quadratic" easing="out">WindowOpen</animation>
+					<animation effect="slide" start="0,0" end="0,120" time="300" tween="quadratic" easing="out">WindowClose</animation> -->
                     <centerleft>640</centerleft>
-                    <top>67</top>
+                    <top>720</top>
                     <width>220</width>
                     <height>30</height>
                     <itemgap>5</itemgap>
@@ -383,8 +594,8 @@
                     <orientation>horizontal</orientation>
                     <visible>Control.HasFocus(703) | ControlGroup(800).HasFocus</visible>
                     <control type="button" id="802">
-                        <width>40</width>
-                        <height>28</height>
+                        <width>20</width>
+                        <height>14</height>
                         <font>-</font>
                         <label>31356</label>
                         <texturefocus>OSDDownFO.png</texturefocus>
@@ -394,8 +605,8 @@
                         <onclick>ActivateWindow(SubtitleSearch)</onclick>
                     </control>
                     <control type="togglebutton" id="803">
-                        <width>60</width>
-                        <height>28</height>
+                        <width>30</width>
+                        <height>14</height>
                         <font>-</font>
                         <label>24022</label>
                         <altlabel>24021</altlabel>
@@ -415,8 +626,8 @@
                         <enable>VideoPlayer.HasSubtitles + VideoPlayer.SubtitlesEnabled</enable>
                         <animation effect="fade" start="100" end="50" time="100" condition="!VideoPlayer.HasSubtitles | !VideoPlayer.SubtitlesEnabled">Conditional</animation>
                         <control type="button" id="804">
-                            <width>60</width>
-                            <height>28</height>
+                            <width>30</width>
+                            <height>14</height>
                             <font>-</font>
                             <label>209</label>
                             <texturefocus>OSDSubsLangFO.png</texturefocus>
@@ -452,8 +663,8 @@
                         </control>
                     </control>
                     <control type="button" id="807">
-                        <width>40</width>
-                        <height>28</height>
+                        <width>20</width>
+                        <height>14</height>
                         <font>-</font>
                         <texturefocus>OSDOffsetFO.png</texturefocus>
                         <texturenofocus>OSDOffsetNF.png</texturenofocus>

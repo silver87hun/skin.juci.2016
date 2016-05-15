@@ -7,7 +7,7 @@
 
 		<!-- fade -->
 		
-<!-- 		        <control type="image">
+ 		        <control type="image">
             <left>0</left>
             <top>-400</top>
             <width>1280</width>
@@ -31,7 +31,16 @@
             <aspectratio>stretch</aspectratio>
             <texture>shade/fadeOutBottom.png</texture>
         </control>
-		 -->
+		
+				        <control type="image">
+            <left>0</left>
+            <top>-800</top>
+            <width>1280</width>
+            <height>700</height>
+            <aspectratio>stretch</aspectratio>
+            <texture>shade/fadeOutUp.png</texture>
+        </control>
+		 
 		 
 
 		 
@@ -41,10 +50,12 @@
             <width>1280</width>
             <height>900</height>
             <aspectratio>stretch</aspectratio>
-            <texture>mask/mask_black50.png</texture>
+            <texture>mask/mask_black20.png</texture>
         </control>
 		 		 <!-- szines csík -->
-			<!-- 		<control type="image">
+		<!-- 	<control type="group">	 
+			<animation effect="slide" start="0,120" end="0,20" time="300" delay="600" tween="quadratic" easing="out">WindowOpen</animation>
+			 		<control type="image">
             <left>0</left>
             <top>100</top>
             <width>1280</width>
@@ -63,7 +74,7 @@
             <imagepath background="true">layer</imagepath>
             <timeperimage>80000</timeperimage>
             <randomize>true</randomize>
-            <fadetime>2000</fadetime>
+            <fadetime>500</fadetime>
 
         </control>
 
@@ -73,18 +84,18 @@
             <width>1280</width>
             <height>720</height>
             <aspectratio>stretch</aspectratio>
-            <texture>mask/gray.png</texture>
-        </control> -->
-		
+            <texture>mask/mask_black50.png</texture>
+        </control>
+		</control> -->
             <!--  <animation effect="slide" start="0,120" end="0,0" time="300" delay="600" tween="quadratic" easing="out" condition="!Window.IsVisible(fullscreeninfo)">Conditional</animation>
             <animation effect="slide" start="0,0" end="0,120" time="300" delay="600" tween="quadratic" easing="out" condition="!Window.IsVisible(fullscreeninfo)">WindowClose</animation>  -->
-            <animation effect="slide" start="0,0" end="0,120" time="300" delay="600" tween="quadratic" easing="out" condition="Window.IsVisible(videoosd)">Conditional</animation>
+            <!-- <animation effect="slide" start="0,0" end="0,120" time="300" delay="600" tween="quadratic" easing="out" condition="Window.IsVisible(videoosd)">Conditional</animation> -->
             <include>VideoPlayerTopSlideOutOSD</include>
         </control>
         <control type="group">
-            <animation effect="fade" start="0" end="100" time="300" delay="10000">WindowOpen</animation>
+<!--             <animation effect="fade" start="0" end="100" time="300" delay="10000">WindowOpen</animation>
             <animation effect="fade" start="100" end="0" time="300" delay="300">WindowClose</animation>
-            <animation effect="fade" start="0" end="100" time="300" delay="10000">VisibleChange</animation>
+            <animation effect="fade" start="0" end="100" time="300" delay="10000">VisibleChange</animation> -->
             <visible>Player.Paused + [!Window.IsVisible(fullscreeninfo) + !Window.IsVisible(subtitlesearch) + !Window.IsVisible(script-nextup-notification-NextUpInfo.xml) + !Window.IsVisible(script-nextup-notification-StillWatchingInfo.xml)]</visible>
             <!-- <include>VideoPlayerCommonInfo</include> -->
         </control>
